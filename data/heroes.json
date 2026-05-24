@@ -1,0 +1,988 @@
+[
+  {
+    "id": "anti_mage",
+    "name": "敌法师",
+    "name_en": "Anti-Mage",
+    "attribute": "agi",
+    "attack_type": "melee",
+    "roles": ["核心", "逃生"],
+    "complexity": 1,
+    "tier": "S",
+    "positions": [1],
+    "lore": "修士们的信条教导：魔法是万恶之源。",
+    "stats": {
+      "str_base": 23, "str_gain": 1.3,
+      "agi_base": 24, "agi_gain": 2.8,
+      "int_base": 12, "int_gain": 1.8,
+      "damage_min": 53, "damage_max": 57,
+      "armor": 3.0,
+      "move_speed": 310,
+      "attack_range": 150,
+      "bat": 1.4
+    },
+    "skills": [
+      {
+        "name": "法力损毁",
+        "name_en": "Mana Break",
+        "description": "每次攻击燃烧目标法力值，并造成等量物理伤害。",
+        "type": "passive",
+        "icon": "antimage_mana_break"
+      },
+      {
+        "name": "闪烁",
+        "name_en": "Blink",
+        "description": "短距离传送至目标地点。",
+        "type": "active",
+        "icon": "antimage_blink"
+      },
+      {
+        "name": "法术反制",
+        "name_en": "Counterspell",
+        "description": "被动提供魔法抗性，主动施放后短暂反弹敌方指向性法术。",
+        "type": "active",
+        "icon": "antimage_counterspell"
+      },
+      {
+        "name": "法力虚空",
+        "name_en": "Mana Void",
+        "description": "对目标及周围敌人造成基于目标已损失法力值的伤害，并短暂眩晕。",
+        "type": "active",
+        "icon": "antimage_mana_void",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+9 力量", "+0.6s 法力虚空眩晕"],
+      "15": ["-1s 闪烁冷却", "+法力损毁每次燃烧20法力"],
+      "20": ["+350 闪烁施法距离", "法术反制持续时间+1s"],
+      "25": ["法力虚空 1.0% 每点缺失法力伤害", "-50s 法力虚空冷却"]
+    },
+    "aghanims": {
+      "scepter": "闪烁解除时对区域内敌人施放法术反制。",
+      "shard": "闪烁后获得短暂的攻击速度加成。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "quelling_blade", "slippers", "circlet"],
+        "early": ["power_treads", "ring_of_health", "vladmir"],
+        "core": ["battlefury", "manta", "abyssal_blade"],
+        "luxury": ["butterfly", "skadi", "heart"]
+      },
+      "aggressive": {
+        "name": "进攻出装",
+        "starting": ["tango", "quelling_blade", "slippers", "circlet"],
+        "early": ["power_treads", "orb_of_corrosion"],
+        "core": ["diffusal_blade", "manta", "basher"],
+        "luxury": ["abyssal_blade", "butterfly", "nullifier"]
+      }
+    },
+    "skill_build": [2, 1, 2, 3, 2, 4, 2, 1, 1, 1, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["storm_spirit", "medusa", "zeus"],
+      "bad_against": ["phantom_lancer", "meepo", "axe"]
+    },
+    "tips": {
+      "laning": "前期以补刀为主，用闪烁躲避 gank，避免无谓交战。尽量在6-7分钟完成战斧的戒指。",
+      "teamfight": "不要第一个进场，等对方交出关键控制后闪烁切入后排。法力虚空优先释放给法力缺失最多的目标。"
+    }
+  },
+  {
+    "id": "axe",
+    "name": "斧王",
+    "name_en": "Axe",
+    "attribute": "str",
+    "attack_type": "melee",
+    "roles": ["先手", "坦克", "控制"],
+    "complexity": 1,
+    "tier": "A",
+    "positions": [3],
+    "lore": "莫古尔汗不需要军队，他就是军队。",
+    "stats": {
+      "str_base": 25, "str_gain": 2.8,
+      "agi_base": 20, "agi_gain": 2.2,
+      "int_base": 18, "int_gain": 1.6,
+      "damage_min": 52, "damage_max": 56,
+      "armor": 2.5,
+      "move_speed": 310,
+      "attack_range": 150,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "狂战士之吼",
+        "name_en": "Berserker's Call",
+        "description": "斧王嘲讽附近所有敌方单位攻击自己，并获得额外护甲加成。",
+        "type": "active",
+        "icon": "axe_berserkers_call"
+      },
+      {
+        "name": "战斗饥渴",
+        "name_en": "Battle Hunger",
+        "description": "对目标施加持续伤害并降低移速，当目标击杀单位时效果消失。",
+        "type": "active",
+        "icon": "axe_battle_hunger"
+      },
+      {
+        "name": "反击螺旋",
+        "name_en": "Counter Helix",
+        "description": "被攻击时有概率对周围敌人造成物理伤害。",
+        "type": "passive",
+        "icon": "axe_counter_helix"
+      },
+      {
+        "name": "淘汰之刃",
+        "name_en": "Culling Blade",
+        "description": "对生命值低于阈值的目标直接斩杀，否则造成伤害。成功斩杀为周围队友提供移速加成。",
+        "type": "active",
+        "icon": "axe_culling_blade",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+2s 战斗饥渴持续时间", "+8 反击螺旋伤害"],
+      "15": ["+40 狂战士之吼护甲", "+12% 反击螺旋触发率"],
+      "20": ["+100 淘汰之刃斩杀线", "+25 战斗饥渴伤害/秒"],
+      "25": ["+狂战士之吼持续时间+1.5s", "淘汰之刃无冷却(阈值内)"]
+    },
+    "aghanims": {
+      "scepter": "淘汰之刃对非斩杀目标施加战斗饥渴并降低护甲。",
+      "shard": "反击螺旋触发时对目标施加减速和破坏效果。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "stout_shield", "ring_of_protection", "branches"],
+        "early": ["vanguard", "boots", "blink"],
+        "core": ["blink", "blade_mail", "aghanims_scepter"],
+        "luxury": ["heart", "shivas_guard", "overwhelming_blink"]
+      }
+    },
+    "skill_build": [3, 1, 3, 2, 3, 4, 3, 1, 1, 1, 2, 4, 2, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["anti_mage", "phantom_assassin", "terrorblade"],
+      "bad_against": ["venomancer", "necrophos", "viper"]
+    },
+    "tips": {
+      "laning": "积极越塔利用反击螺旋抢兵和骚扰对面核心。战斗饥渴用来限制对手补刀。",
+      "teamfight": "跳刀先手嘲讽多人是核心操作，配合刃甲反弹伤害。注意观察斩杀线，用淘汰之刃确保击杀。"
+    }
+  },
+  {
+    "id": "crystal_maiden",
+    "name": "水晶室女",
+    "name_en": "Crystal Maiden",
+    "attribute": "int",
+    "attack_type": "ranged",
+    "roles": ["辅助", "控制", "爆发"],
+    "complexity": 1,
+    "tier": "A",
+    "positions": [4, 5],
+    "lore": "在冰霜之域学会了寒冰魔法，为队友持续恢复法力。",
+    "stats": {
+      "str_base": 18, "str_gain": 2.0,
+      "agi_base": 16, "agi_gain": 1.6,
+      "int_base": 16, "int_gain": 3.3,
+      "damage_min": 44, "damage_max": 50,
+      "armor": 1.5,
+      "move_speed": 280,
+      "attack_range": 600,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "冰封禁制",
+        "name_en": "Crystal Nova",
+        "description": "在目标区域释放冰霜冲击，造成伤害并降低攻击速度和移动速度。",
+        "type": "active",
+        "icon": "crystal_maiden_crystal_nova"
+      },
+      {
+        "name": "冰霜之咬",
+        "name_en": "Frostbite",
+        "description": "冻结敌方单位，使其无法移动和攻击。",
+        "type": "active",
+        "icon": "crystal_maiden_frostbite"
+      },
+      {
+        "name": "奥术光环",
+        "name_en": "Arcane Aura",
+        "description": "全地图为队友提供法力恢复加成。",
+        "type": "passive",
+        "icon": "crystal_maiden_brilliance_aura"
+      },
+      {
+        "name": "极寒领域",
+        "name_en": "Freezing Field",
+        "description": "在自身周围释放持续的冰爆，对区域内敌人造成大量伤害并减速。",
+        "type": "active",
+        "icon": "crystal_maiden_freezing_field",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+75 冰封禁制伤害", "+125 施法距离"],
+      "15": ["+1.5s 冰霜之咬持续时间", "+150 金钱/分"],
+      "20": ["+60 极寒领域伤害", "+300 冰封禁制范围"],
+      "25": ["+1.5s 冰霜之咬冷却", "极寒领域无法被打断"]
+    },
+    "aghanims": {
+      "scepter": "极寒领域期间自身免疫物理伤害，冰爆范围增大。",
+      "shard": "冰霜之咬变为区域施放，可同时冻结多个单位。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "clarity", "clarity", "ward_observer", "ward_sentry", "branches"],
+        "early": ["tranquil_boots", "magic_wand", "wind_lace"],
+        "core": ["glimmer_cape", "force_staff", "aghanims_shard"],
+        "luxury": ["blink", "aghanims_scepter", "black_king_bar"]
+      }
+    },
+    "skill_build": [1, 2, 3, 1, 1, 4, 1, 2, 2, 2, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["phantom_lancer", "broodmother", "chaos_knight"],
+      "bad_against": ["storm_spirit", "phantom_assassin", "juggernaut"]
+    },
+    "tips": {
+      "laning": "前期用冰封禁制和冰霜之咬骚扰敌方核心，保持买眼节奏。注意自身血量极低，走位要谨慎。",
+      "teamfight": "在安全位置释放极寒领域，或配合BKB/跳刀进场开大。平时优先保护己方核心。"
+    }
+  },
+  {
+    "id": "invoker",
+    "name": "祈求者",
+    "name_en": "Invoker",
+    "attribute": "uni",
+    "attack_type": "ranged",
+    "roles": ["核心", "爆发", "控制", "逃生"],
+    "complexity": 3,
+    "tier": "S",
+    "positions": [2],
+    "lore": "最后的三元素祈灵师，掌握着十种强大法术的组合。",
+    "stats": {
+      "str_base": 19, "str_gain": 2.4,
+      "agi_base": 20, "agi_gain": 1.9,
+      "int_base": 22, "int_gain": 4.6,
+      "damage_min": 42, "damage_max": 48,
+      "armor": 2.0,
+      "move_speed": 285,
+      "attack_range": 600,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "灵动迅捷",
+        "name_en": "Quas",
+        "description": "提供生命恢复和力量加成。",
+        "type": "passive",
+        "icon": "invoker_quas"
+      },
+      {
+        "name": "磁暴",
+        "name_en": "Wex",
+        "description": "提供移动速度和攻击速度加成。",
+        "type": "passive",
+        "icon": "invoker_wex"
+      },
+      {
+        "name": "超能",
+        "name_en": "Exort",
+        "description": "提供额外攻击伤害。",
+        "type": "passive",
+        "icon": "invoker_exort"
+      },
+      {
+        "name": "祈唤",
+        "name_en": "Invoke",
+        "description": "根据当前三种元素球的组合切换出不同法术。",
+        "type": "active",
+        "icon": "invoker_invoke",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+1.5 灵动迅捷恢复", "+40 混沌陨石接触伤害"],
+      "15": ["+1 熔炉精灵", "+30 急速冷却伤害"],
+      "20": ["+2 熔炉精灵攻击", "灵动减速持续时间+1s"],
+      "25": ["灾变冷却12s", "+造成2个龙卷风"]
+    },
+    "aghanims": {
+      "scepter": "祈唤无冷却，可同时准备2个法术。",
+      "shard": "获得第十一种法术：冰墙融合，结合冰墙和电磁脉冲效果。"
+    },
+    "builds": {
+      "standard": {
+        "name": "Exort 出装",
+        "starting": ["tango", "null_talisman", "branches"],
+        "early": ["hand_of_midas", "boots", "urn_of_shadows"],
+        "core": ["aghanims_scepter", "blink", "refresher_orb"],
+        "luxury": ["octarine_core", "shivas_guard", "hex"]
+      },
+      "aggressive": {
+        "name": "Quas-Wex 出装",
+        "starting": ["tango", "null_talisman", "branches"],
+        "early": ["urn_of_shadows", "boots", "spirit_vessel"],
+        "core": ["orchid", "aghanims_scepter", "blink"],
+        "luxury": ["hex", "bloodthorn", "refresher_orb"]
+      }
+    },
+    "skill_build": [3, 1, 3, 2, 3, 4, 3, 3, 3, 3, 1, 4, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 0, 0],
+    "counters": {
+      "good_against": ["crystal_maiden", "sniper", "drow_ranger"],
+      "bad_against": ["anti_mage", "nyx_assassin", "storm_spirit"]
+    },
+    "tips": {
+      "laning": "Exort流注重补刀压制，利用高攻击力和阳炎冲击控线。Quas-Wex流注重游走配合龙卷风+电磁脉冲。",
+      "teamfight": "完整combo：龙卷风→陨石→音爆→急速冷却→灾变。注意法术衔接时间。"
+    }
+  },
+  {
+    "id": "juggernaut",
+    "name": "主宰",
+    "name_en": "Juggernaut",
+    "attribute": "agi",
+    "attack_type": "melee",
+    "roles": ["核心", "推进", "逃生"],
+    "complexity": 1,
+    "tier": "A",
+    "positions": [1],
+    "lore": "岛国的最后武士，戴着面具行走天地间。",
+    "stats": {
+      "str_base": 20, "str_gain": 2.0,
+      "agi_base": 34, "agi_gain": 2.8,
+      "int_base": 14, "int_gain": 1.4,
+      "damage_min": 50, "damage_max": 54,
+      "armor": 4.5,
+      "move_speed": 300,
+      "attack_range": 150,
+      "bat": 1.4
+    },
+    "skills": [
+      {
+        "name": "剑刃风暴",
+        "name_en": "Blade Fury",
+        "description": "旋转剑刃造成范围魔法伤害，期间免疫魔法。",
+        "type": "active",
+        "icon": "juggernaut_blade_fury"
+      },
+      {
+        "name": "治疗守卫",
+        "name_en": "Healing Ward",
+        "description": "召唤一个治疗守卫，每秒恢复周围友军最大生命值的百分比。",
+        "type": "active",
+        "icon": "juggernaut_healing_ward"
+      },
+      {
+        "name": "剑刃之舞",
+        "name_en": "Blade Dance",
+        "description": "有概率造成暴击伤害。",
+        "type": "passive",
+        "icon": "juggernaut_blade_dance"
+      },
+      {
+        "name": "无敌斩",
+        "name_en": "Omnislash",
+        "description": "跳向敌方英雄进行高速斩击，斩击期间无敌且可进行普攻。",
+        "type": "active",
+        "icon": "juggernaut_omni_slash",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+5 全属性", "+20 攻击速度"],
+      "15": ["+100 剑刃风暴伤害/秒", "+1% 治疗守卫治疗量"],
+      "20": ["+160 无敌斩伤害", "+35% 暴击伤害"],
+      "25": ["+1s 剑刃风暴持续时间", "+2 无敌斩弹射次数"]
+    },
+    "aghanims": {
+      "scepter": "无敌斩期间攻击速度加快，斩击次数增加。",
+      "shard": "剑刃风暴移动速度增加且结束时释放斩击波。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "quelling_blade", "slippers", "circlet"],
+        "early": ["phase_boots", "magic_wand", "wraith_band"],
+        "core": ["battlefury", "manta", "basher"],
+        "luxury": ["butterfly", "abyssal_blade", "skadi"]
+      }
+    },
+    "skill_build": [1, 3, 1, 2, 1, 4, 1, 3, 3, 3, 2, 4, 2, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["crystal_maiden", "lion", "shadow_shaman"],
+      "bad_against": ["axe", "phantom_lancer", "ghost_scepter_users"]
+    },
+    "tips": {
+      "laning": "剑刃风暴配合辅助控制可以轻松击杀。注意转旋前确保能命中目标。",
+      "teamfight": "无敌斩优先选择孤立目标或残血英雄。治疗守卫在团战中价值极高，记得施放。"
+    }
+  },
+  {
+    "id": "phantom_assassin",
+    "name": "幻影刺客",
+    "name_en": "Phantom Assassin",
+    "attribute": "agi",
+    "attack_type": "melee",
+    "roles": ["核心", "逃生"],
+    "complexity": 1,
+    "tier": "S",
+    "positions": [1],
+    "lore": "面纱修道会最优秀的刺客，无人能逃脱她的追杀。",
+    "stats": {
+      "str_base": 19, "str_gain": 2.0,
+      "agi_base": 23, "agi_gain": 3.4,
+      "int_base": 15, "int_gain": 1.4,
+      "damage_min": 51, "damage_max": 53,
+      "armor": 3.0,
+      "move_speed": 305,
+      "attack_range": 150,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "窒息之刃",
+        "name_en": "Stifling Dagger",
+        "description": "投出匕首造成伤害并减速目标，附带攻击效果。",
+        "type": "active",
+        "icon": "phantom_assassin_stifling_dagger"
+      },
+      {
+        "name": "幻影突袭",
+        "name_en": "Phantom Strike",
+        "description": "瞬间跳向目标并获得攻击速度加成。",
+        "type": "active",
+        "icon": "phantom_assassin_phantom_strike"
+      },
+      {
+        "name": "模糊",
+        "name_en": "Blur",
+        "description": "获得闪避几率，主动施放后短暂从小地图消失。",
+        "type": "active",
+        "icon": "phantom_assassin_blur"
+      },
+      {
+        "name": "恩赐解脱",
+        "name_en": "Coup de Grace",
+        "description": "普攻有概率造成致命暴击。",
+        "type": "passive",
+        "icon": "phantom_assassin_coup_de_grace",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+15 攻击伤害", "+150 生命值"],
+      "15": ["-2s 窒息之刃冷却", "+25% 模糊闪避"],
+      "20": ["+25% 致命一击概率", "+400 幻影突袭施法距离"],
+      "25": ["+100% 致命一击伤害", "三重窒息之刃"]
+    },
+    "aghanims": {
+      "scepter": "模糊主动施放时释放烟幕区域，目标区域内降低敌人命中率。",
+      "shard": "窒息之刃变为扇形投射，命中范围增大。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "quelling_blade", "slippers", "branches"],
+        "early": ["power_treads", "magic_wand", "wraith_band"],
+        "core": ["desolator", "black_king_bar", "basher"],
+        "luxury": ["abyssal_blade", "satanic", "nullifier"]
+      }
+    },
+    "skill_build": [1, 2, 3, 1, 1, 4, 1, 2, 2, 2, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["sniper", "drow_ranger", "zeus"],
+      "bad_against": ["axe", "slardar", "monkey_king"]
+    },
+    "tips": {
+      "laning": "用窒息之刃远程补兵和骚扰，6级后配合辅助可以击杀。",
+      "teamfight": "BKB开启后跳入后排秒杀脆皮。优先切对方核心输出。"
+    }
+  },
+  {
+    "id": "pudge",
+    "name": "帕吉",
+    "name_en": "Pudge",
+    "attribute": "str",
+    "attack_type": "melee",
+    "roles": ["控制", "坦克", "先手"],
+    "complexity": 2,
+    "tier": "B",
+    "positions": [4, 3],
+    "lore": "四号屠宰场中唯一的活物，以鲜肉为食。",
+    "stats": {
+      "str_base": 25, "str_gain": 3.5,
+      "agi_base": 14, "agi_gain": 1.5,
+      "int_base": 16, "int_gain": 1.5,
+      "damage_min": 63, "damage_max": 69,
+      "armor": 1.0,
+      "move_speed": 280,
+      "attack_range": 150,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "肉钩",
+        "name_en": "Meat Hook",
+        "description": "向目标方向投出肉钩，命中第一个单位后将其拉至身边。",
+        "type": "active",
+        "icon": "pudge_meat_hook"
+      },
+      {
+        "name": "腐烂",
+        "name_en": "Rot",
+        "description": "持续对自身和周围敌人造成伤害并减速。",
+        "type": "toggle",
+        "icon": "pudge_rot"
+      },
+      {
+        "name": "腐肉堆积",
+        "name_en": "Flesh Heap",
+        "description": "被动获得魔法抗性，每次附近敌方英雄死亡永久增加力量。",
+        "type": "passive",
+        "icon": "pudge_flesh_heap"
+      },
+      {
+        "name": "肢解",
+        "name_en": "Dismember",
+        "description": "持续咀嚼目标造成伤害并回复自身生命值，目标被控制无法行动。",
+        "type": "active",
+        "icon": "pudge_dismember",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+1.5 腐肉堆积力量", "+100 肉钩伤害"],
+      "15": ["+4% 腐烂减速", "+12% 魔法抗性"],
+      "20": ["+150 肉钩距离", "+180 腐烂伤害"],
+      "25": ["+6s 肢解持续时间", "肉钩命中施加肢解"]
+    },
+    "aghanims": {
+      "scepter": "肢解吞噬目标，移动速度降低但无法被打断。",
+      "shard": "肉钩穿透并拉取路径上所有敌方英雄。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "wind_lace", "ward_observer", "clarity", "clarity"],
+        "early": ["boots", "magic_wand", "urn_of_shadows"],
+        "core": ["tranquil_boots", "blink", "aghanims_shard"],
+        "luxury": ["aghanims_scepter", "heart", "shivas_guard"]
+      }
+    },
+    "skill_build": [1, 2, 2, 1, 1, 4, 1, 3, 2, 2, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["sniper", "crystal_maiden", "drow_ranger"],
+      "bad_against": ["lifestealer", "juggernaut", "anti_mage"]
+    },
+    "tips": {
+      "laning": "利用树林和高低差找钩子角度，配合腐烂减速确保命中。",
+      "teamfight": "优先钩住对方核心或位置不佳的英雄，跳刀肢解也是常用先手方式。"
+    }
+  },
+  {
+    "id": "storm_spirit",
+    "name": "风暴之灵",
+    "name_en": "Storm Spirit",
+    "attribute": "int",
+    "attack_type": "ranged",
+    "roles": ["核心", "先手", "逃生", "爆发"],
+    "complexity": 3,
+    "tier": "A",
+    "positions": [2],
+    "lore": "雷霆的化身，以闪电之姿穿越战场。",
+    "stats": {
+      "str_base": 21, "str_gain": 2.0,
+      "agi_base": 22, "agi_gain": 1.8,
+      "int_base": 23, "int_gain": 3.9,
+      "damage_min": 47, "damage_max": 57,
+      "armor": 2.5,
+      "move_speed": 285,
+      "attack_range": 480,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "残影",
+        "name_en": "Static Remnant",
+        "description": "在当前位置创造一个电子残影，接触敌人后爆炸造成伤害。",
+        "type": "active",
+        "icon": "storm_spirit_static_remnant"
+      },
+      {
+        "name": "电子涡流",
+        "name_en": "Electric Vortex",
+        "description": "拉拽目标向自身方向移动。",
+        "type": "active",
+        "icon": "storm_spirit_electric_vortex"
+      },
+      {
+        "name": "超负荷",
+        "name_en": "Overload",
+        "description": "每次施放技能后下次攻击附带范围伤害和减速。",
+        "type": "passive",
+        "icon": "storm_spirit_overload"
+      },
+      {
+        "name": "球状闪电",
+        "name_en": "Ball Lightning",
+        "description": "化为闪电球飞向目标位置，飞行中无敌且消耗法力值。",
+        "type": "active",
+        "icon": "storm_spirit_ball_lightning",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+20 攻击速度", "+1.5 法力恢复"],
+      "15": ["+80 残影伤害", "+0.5s 电子涡流拉拽时间"],
+      "20": ["+35 超负荷伤害", "-16% 球状闪电法力消耗"],
+      "25": ["+0.3s 电子涡流范围拉拽", "超负荷无视魔免"]
+    },
+    "aghanims": {
+      "scepter": "电子涡流变为范围施放，拉拽区域内所有敌人。",
+      "shard": "球状闪电路径上自动释放残影。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "null_talisman", "branches", "faerie_fire"],
+        "early": ["bottle", "power_treads", "null_talisman"],
+        "core": ["kaya", "orchid", "bloodstone"],
+        "luxury": ["bloodthorn", "shivas_guard", "hex"]
+      }
+    },
+    "skill_build": [1, 3, 1, 2, 1, 4, 1, 3, 3, 3, 2, 4, 2, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["sniper", "drow_ranger", "crystal_maiden"],
+      "bad_against": ["anti_mage", "nyx_assassin", "silencer"]
+    },
+    "tips": {
+      "laning": "用残影清兵保持线上优势，6级后频繁游走带节奏。",
+      "teamfight": "滚入后排秒杀脆皮是核心打法，注意法力管理避免空蓝。"
+    }
+  },
+  {
+    "id": "drow_ranger",
+    "name": "卓尔游侠",
+    "name_en": "Drow Ranger",
+    "attribute": "agi",
+    "attack_type": "ranged",
+    "roles": ["核心", "推进"],
+    "complexity": 1,
+    "tier": "A",
+    "positions": [1, 2],
+    "lore": "孤独的暗夜精灵射手，用寒冰之箭冻结一切。",
+    "stats": {
+      "str_base": 18, "str_gain": 1.9,
+      "agi_base": 20, "agi_gain": 3.1,
+      "int_base": 15, "int_gain": 1.4,
+      "damage_min": 49, "damage_max": 56,
+      "armor": 2.5,
+      "move_speed": 285,
+      "attack_range": 625,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "霜冻之箭",
+        "name_en": "Frost Arrows",
+        "description": "用寒冰灌注箭矢，对命中目标造成减速效果。",
+        "type": "active",
+        "icon": "drow_ranger_frost_arrows"
+      },
+      {
+        "name": "狂风",
+        "name_en": "Gust",
+        "description": "释放强风沉默并击退前方敌人。",
+        "type": "active",
+        "icon": "drow_ranger_wave_of_silence"
+      },
+      {
+        "name": "多重射击",
+        "name_en": "Multishot",
+        "description": "向锥形区域释放一波箭雨。",
+        "type": "active",
+        "icon": "drow_ranger_multishot"
+      },
+      {
+        "name": "精准光环",
+        "name_en": "Marksmanship",
+        "description": "获得额外敏捷加成，并有几率忽视目标护甲。",
+        "type": "passive",
+        "icon": "drow_ranger_marksmanship",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+15% 多重射击伤害", "+5 全属性"],
+      "15": ["+50% 狂风击退距离", "+10 敏捷"],
+      "20": ["+25% 精准光环触发率", "-8s 多重射击冷却"],
+      "25": ["+25% 霜冻之箭减速", "50% 几率连射"]
+    },
+    "aghanims": {
+      "scepter": "多重射击可对建筑生效且射程增加。",
+      "shard": "霜冻之箭带有假冻效果，持续时间较短。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "slippers", "slippers", "branches"],
+        "early": ["power_treads", "wraith_band", "wraith_band"],
+        "core": ["dragon_lance", "manta", "aghanims_scepter"],
+        "luxury": ["butterfly", "daedalus", "swift_blink"]
+      }
+    },
+    "skill_build": [1, 3, 1, 2, 1, 4, 1, 3, 3, 3, 2, 4, 2, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["crystal_maiden", "sniper", "zeus"],
+      "bad_against": ["phantom_assassin", "storm_spirit", "axe"]
+    },
+    "tips": {
+      "laning": "利用霜冻之箭压制对线，保持距离不让近战英雄靠近。",
+      "teamfight": "站在安全输出位置持续平A，狂风推开冲脸英雄。注意精准光环在敌人贴脸时失效。"
+    }
+  },
+  {
+    "id": "earthshaker",
+    "name": "撼地者",
+    "name_en": "Earthshaker",
+    "attribute": "str",
+    "attack_type": "melee",
+    "roles": ["先手", "控制", "爆发"],
+    "complexity": 2,
+    "tier": "S",
+    "positions": [3, 4],
+    "lore": "他一跺脚，大地为之颤抖。",
+    "stats": {
+      "str_base": 22, "str_gain": 3.7,
+      "agi_base": 12, "agi_gain": 1.4,
+      "int_base": 16, "int_gain": 1.8,
+      "damage_min": 49, "damage_max": 59,
+      "armor": 2.0,
+      "move_speed": 310,
+      "attack_range": 150,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "沟壑",
+        "name_en": "Fissure",
+        "description": "在目标方向制造地裂，眩晕并伤害路径上的敌人，地裂持续一段时间阻挡通行。",
+        "type": "active",
+        "icon": "earthshaker_fissure"
+      },
+      {
+        "name": "余震",
+        "name_en": "Aftershock",
+        "description": "每次施放技能后对周围敌人造成眩晕和伤害。",
+        "type": "passive",
+        "icon": "earthshaker_aftershock"
+      },
+      {
+        "name": "强化图腾",
+        "name_en": "Enchant Totem",
+        "description": "下次攻击获得额外伤害加成。升级A杖后变为跳跃技能。",
+        "type": "active",
+        "icon": "earthshaker_enchant_totem"
+      },
+      {
+        "name": "回音击",
+        "name_en": "Echo Slam",
+        "description": "释放地震波，对周围每个敌方单位产生额外回音伤害，敌人越多伤害越高。",
+        "type": "active",
+        "icon": "earthshaker_echo_slam",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+200 沟壑距离", "+30 攻击速度"],
+      "15": ["+100 余震伤害", "+7 力量"],
+      "20": ["+50% 强化图腾伤害", "-2s 沟壑冷却"],
+      "25": ["+300% 强化图腾伤害", "+回音叠加"]
+    },
+    "aghanims": {
+      "scepter": "强化图腾变为跳跃技能，可跳向目标位置。",
+      "shard": "沟壑路径上留下余震区域，持续造成伤害。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "clarity", "clarity", "enchanted_mango", "ward_observer", "branches"],
+        "early": ["arcane_boots", "magic_wand", "soul_ring"],
+        "core": ["blink", "aghanims_scepter", "black_king_bar"],
+        "luxury": ["refresher_orb", "octarine_core", "overwhelming_blink"]
+      }
+    },
+    "skill_build": [1, 2, 2, 3, 2, 4, 2, 1, 1, 1, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["phantom_lancer", "broodmother", "meepo"],
+      "bad_against": ["lifestealer", "juggernaut", "storm_spirit"]
+    },
+    "tips": {
+      "laning": "沟壑是极好的gank工具，注意走位寻找最佳释放角度。",
+      "teamfight": "跳大是DOTA经典操作，等对方聚集后跳刀+回音击可以团灭。人越多伤害越恐怖。"
+    }
+  },
+  {
+    "id": "lion",
+    "name": "莱恩",
+    "name_en": "Lion",
+    "attribute": "int",
+    "attack_type": "ranged",
+    "roles": ["辅助", "控制", "爆发"],
+    "complexity": 1,
+    "tier": "B",
+    "positions": [4, 5],
+    "lore": "下过地狱又回来的恶魔术士，掌握双控和秒杀之力。",
+    "stats": {
+      "str_base": 18, "str_gain": 2.2,
+      "agi_base": 15, "agi_gain": 1.5,
+      "int_base": 20, "int_gain": 3.5,
+      "damage_min": 47, "damage_max": 53,
+      "armor": 1.0,
+      "move_speed": 290,
+      "attack_range": 600,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "穿刺",
+        "name_en": "Earth Spike",
+        "description": "地面刺出尖刺，眩晕并伤害路径上的敌人。",
+        "type": "active",
+        "icon": "lion_impale"
+      },
+      {
+        "name": "妖术",
+        "name_en": "Hex",
+        "description": "将目标变为无害的小动物，无法攻击和施法。",
+        "type": "active",
+        "icon": "lion_voodoo"
+      },
+      {
+        "name": "法力汲取",
+        "name_en": "Mana Drain",
+        "description": "持续汲取目标法力值为己用。",
+        "type": "active",
+        "icon": "lion_mana_drain"
+      },
+      {
+        "name": "死亡一指",
+        "name_en": "Finger of Death",
+        "description": "释放毁灭性能量指向目标，造成巨额魔法伤害。每次击杀永久增加伤害。",
+        "type": "active",
+        "icon": "lion_finger_of_death",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+100 穿刺伤害", "+0.5s 妖术持续时间"],
+      "15": ["+150 施法距离", "+120 金钱/分"],
+      "20": ["+500 死亡一指伤害", "+2s 穿刺眩晕时间"],
+      "25": ["穿刺范围+1", "死亡一指冷却-15s"]
+    },
+    "aghanims": {
+      "scepter": "死亡一指变为范围伤害，冷却时间降低。",
+      "shard": "法力汲取变为区域施放，吸取范围内所有敌人法力。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "clarity", "ward_observer", "ward_sentry", "enchanted_mango", "branches"],
+        "early": ["arcane_boots", "magic_wand", "wind_lace"],
+        "core": ["blink", "aether_lens", "aghanims_scepter"],
+        "luxury": ["force_staff", "glimmer_cape", "refresher_orb"]
+      }
+    },
+    "skill_build": [1, 2, 1, 3, 1, 4, 1, 2, 2, 2, 3, 4, 3, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["anti_mage", "storm_spirit", "ember_spirit"],
+      "bad_against": ["juggernaut", "lifestealer", "phantom_lancer"]
+    },
+    "tips": {
+      "laning": "双控制极为强力，穿刺+妖术可以控制超过5秒。配合队友轻松击杀。",
+      "teamfight": "先手穿刺控人，死亡一指秒杀残血目标。注意保持安全距离。"
+    }
+  },
+  {
+    "id": "sniper",
+    "name": "狙击手",
+    "name_en": "Sniper",
+    "attribute": "agi",
+    "attack_type": "ranged",
+    "roles": ["核心", "爆发"],
+    "complexity": 1,
+    "tier": "B",
+    "positions": [1, 2],
+    "lore": "来自高地的神射手，枪响之后没有赢家。",
+    "stats": {
+      "str_base": 19, "str_gain": 2.0,
+      "agi_base": 27, "agi_gain": 3.2,
+      "int_base": 15, "int_gain": 2.6,
+      "damage_min": 42, "damage_max": 48,
+      "armor": 3.5,
+      "move_speed": 285,
+      "attack_range": 550,
+      "bat": 1.7
+    },
+    "skills": [
+      {
+        "name": "榴霰弹",
+        "name_en": "Shrapnel",
+        "description": "对目标区域持续降下弹幕，造成伤害并减速。可储存多次使用。",
+        "type": "active",
+        "icon": "sniper_shrapnel"
+      },
+      {
+        "name": "爆头",
+        "name_en": "Headshot",
+        "description": "攻击时有概率造成额外伤害并短暂定身。",
+        "type": "passive",
+        "icon": "sniper_headshot"
+      },
+      {
+        "name": "瞄准",
+        "name_en": "Take Aim",
+        "description": "被动增加攻击距离，主动激活后短暂获得额外射程。",
+        "type": "active",
+        "icon": "sniper_take_aim"
+      },
+      {
+        "name": "暗杀",
+        "name_en": "Assassinate",
+        "description": "瞄准目标后发射致命子弹，远距离造成高额伤害并短暂眩晕。",
+        "type": "active",
+        "icon": "sniper_assassinate",
+        "ultimate": true
+      }
+    ],
+    "talents": {
+      "10": ["+20 攻击速度", "+15 伤害"],
+      "15": ["+30 榴霰弹伤害/秒", "+100 攻击距离"],
+      "20": ["-15% 爆头冷却", "+35 榴霰弹减速"],
+      "25": ["+6 榴霰弹储存", "+100 暗杀伤害"]
+    },
+    "aghanims": {
+      "scepter": "暗杀穿透并眩晕路径上所有目标。",
+      "shard": "榴霰弹提供区域视野且在区域内获得额外攻击速度。"
+    },
+    "builds": {
+      "standard": {
+        "name": "标准出装",
+        "starting": ["tango", "slippers", "branches", "branches", "faerie_fire"],
+        "early": ["power_treads", "wraith_band", "dragon_lance"],
+        "core": ["maelstrom", "dragon_lance", "aghanims_scepter"],
+        "luxury": ["daedalus", "mjollnir", "satanic"]
+      }
+    },
+    "skill_build": [1, 2, 3, 1, 1, 4, 1, 3, 3, 3, 2, 4, 2, 2, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    "counters": {
+      "good_against": ["crystal_maiden", "zeus", "witch_doctor"],
+      "bad_against": ["storm_spirit", "phantom_assassin", "axe"]
+    },
+    "tips": {
+      "laning": "利用超远射程安全补刀，榴霰弹用来限制敌方走位。",
+      "teamfight": "站在最后方输出，用暗杀补刀残血目标。注意站位防止被切入。"
+    }
+  }
+]

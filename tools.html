@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实用工具 - DOTA 2 攻略站</title>
+  <meta name="description" content="DOTA 2 实用工具：英雄对比器、DPS 计算器。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/heroes.css">
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .tool-panel {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+    }
+
+    .tool-panel h2 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+
+    .compare-selects {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .compare-selects .vs {
+      color: var(--accent-red);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .tool-select {
+      width: 100%;
+      padding: 10px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .tool-select:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+
+    .compare-result {
+      display: none;
+    }
+
+    .compare-result.active {
+      display: block;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table th, .compare-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.85rem;
+    }
+
+    .compare-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      text-align: left;
+      width: 30%;
+    }
+
+    .compare-table td {
+      text-align: center;
+      width: 35%;
+    }
+
+    .compare-table td.better {
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+
+    .compare-table td.worse {
+      color: var(--text-muted);
+    }
+
+    /* DPS Calculator */
+    .calc-form {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .calc-row label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .calc-input {
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+
+    .calc-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+    }
+
+    .calc-result {
+      background: var(--bg-input);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .calc-result .dps-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent-gold);
+    }
+
+    .calc-result .dps-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .calc-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .calc-detail-item {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .calc-detail-item span {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .calc-btn {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .compare-selects {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .calc-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">⚔️ <span>DOTA 2</span> 攻略站</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="heroes.html">英雄</a></li>
+        <li><a href="items.html">物品</a></li>
+        <li><a href="guides.html">攻略</a></li>
+        <li><a href="meta.html">版本</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索英雄/物品...">
+        <div class="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="section-header">
+      <h2>🛠️ 实用工具</h2>
+    </div>
+
+    <div class="tools-grid">
+      <!-- Hero Comparator -->
+      <div class="tool-panel">
+        <h2>⚖️ 英雄对比器</h2>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px">选择两个英雄，比较他们的基础属性数据。</p>
+        <div class="compare-selects">
+          <select class="tool-select" id="compare-hero1">
+            <option value="">选择英雄...</option>
+          </select>
+          <span class="vs">VS</span>
+          <select class="tool-select" id="compare-hero2">
+            <option value="">选择英雄...</option>
+          </select>
+        </div>
+        <button class="btn btn-primary calc-btn" id="compare-btn">开始对比</button>
+        <div class="compare-result" id="compare-result"></div>
+      </div>
+
+      <!-- DPS Calculator -->
+      <div class="tool-panel">
+        <h2>📐 DPS 计算器</h2>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px">输入英雄攻击数据，计算每秒伤害输出。</p>
+        <div class="calc-form">
+          <div class="calc-row">
+            <label>攻击力</label>
+            <input class="calc-input" type="number" id="calc-damage" value="100" min="0">
+          </div>
+          <div class="calc-row">
+            <label>攻击速度</label>
+            <input class="calc-input" type="number" id="calc-ias" value="100" min="0">
+          </div>
+          <div class="calc-row">
+            <label>基础攻击间隔</label>
+            <input class="calc-input" type="number" id="calc-bat" value="1.7" min="0.1" step="0.1">
+          </div>
+          <div class="calc-row">
+            <label>暴击概率 (%)</label>
+            <input class="calc-input" type="number" id="calc-crit-chance" value="0" min="0" max="100">
+          </div>
+          <div class="calc-row">
+            <label>暴击倍数</label>
+            <input class="calc-input" type="number" id="calc-crit-mult" value="2.0" min="1" step="0.1">
+          </div>
+          <div class="calc-row">
+            <label>目标护甲</label>
+            <input class="calc-input" type="number" id="calc-armor" value="5" min="-20">
+          </div>
+        </div>
+        <button class="btn btn-primary calc-btn" id="calc-btn">计算 DPS</button>
+        <div class="calc-result" id="calc-result" style="display:none">
+          <div class="dps-value" id="dps-value">0</div>
+          <div class="dps-label">DPS (每秒伤害)</div>
+          <div class="calc-details">
+            <div class="calc-detail-item">
+              <span id="atk-per-sec">0</span>
+              攻击次数/秒
+            </div>
+            <div class="calc-detail-item">
+              <span id="dmg-per-hit">0</span>
+              平均每击伤害
+            </div>
+            <div class="calc-detail-item">
+              <span id="dmg-reduction">0%</span>
+              护甲减免
+            </div>
+            <div class="calc-detail-item">
+              <span id="effective-dmg">0</span>
+              有效伤害/击
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EHP Calculator -->
+    <div class="tool-panel" style="max-width:600px;margin-bottom:40px">
+      <h2>🛡️ EHP 计算器（有效生命值）</h2>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px">计算英雄在物理/魔法伤害下的有效生命值。</p>
+      <div class="calc-form">
+        <div class="calc-row">
+          <label>生命值</label>
+          <input class="calc-input" type="number" id="ehp-hp" value="1000" min="1">
+        </div>
+        <div class="calc-row">
+          <label>护甲</label>
+          <input class="calc-input" type="number" id="ehp-armor" value="10" min="-20">
+        </div>
+        <div class="calc-row">
+          <label>魔法抗性 (%)</label>
+          <input class="calc-input" type="number" id="ehp-magic-res" value="25" min="0" max="100">
+        </div>
+      </div>
+      <button class="btn btn-primary calc-btn" id="ehp-btn">计算 EHP</button>
+      <div class="calc-result" id="ehp-result" style="display:none">
+        <div class="calc-details" style="margin-top:0">
+          <div class="calc-detail-item">
+            <span id="ehp-physical" style="color:var(--accent-gold)">0</span>
+            物理 EHP
+          </div>
+          <div class="calc-detail-item">
+            <span id="ehp-magical" style="color:var(--accent-blue)">0</span>
+            魔法 EHP
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    let allHeroes = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      allHeroes = await loadJSON('data/heroes.json') || [];
+      initCompare();
+      initDPSCalc();
+      initEHPCalc();
+    });
+
+    function initCompare() {
+      const select1 = document.getElementById('compare-hero1');
+      const select2 = document.getElementById('compare-hero2');
+      const btn = document.getElementById('compare-btn');
+      const result = document.getElementById('compare-result');
+
+      allHeroes.forEach(h => {
+        const opt = `<option value="${h.id}">${h.name} (${h.name_en})</option>`;
+        select1.innerHTML += opt;
+        select2.innerHTML += opt;
+      });
+
+      btn.addEventListener('click', () => {
+        const h1 = allHeroes.find(h => h.id === select1.value);
+        const h2 = allHeroes.find(h => h.id === select2.value);
+        if (!h1 || !h2) return;
+
+        const stats = [
+          { label: '力量', key: 'str_base', gain: 'str_gain' },
+          { label: '敏捷', key: 'agi_base', gain: 'agi_gain' },
+          { label: '智力', key: 'int_base', gain: 'int_gain' },
+          { label: '攻击力', compute: (h) => `${h.stats.damage_min}-${h.stats.damage_max}`, compare: (h) => (h.stats.damage_min + h.stats.damage_max) / 2 },
+          { label: '护甲', key: 'armor' },
+          { label: '移动速度', key: 'move_speed' },
+          { label: '攻击距离', key: 'attack_range' },
+        ];
+
+        let html = `<table class="compare-table">
+          <thead><tr><th>属性</th><th>${h1.name}</th><th>${h2.name}</th></tr></thead><tbody>`;
+
+        stats.forEach(stat => {
+          let v1, v2, d1, d2;
+          if (stat.compute) {
+            d1 = stat.compute(h1);
+            d2 = stat.compute(h2);
+            v1 = stat.compare(h1);
+            v2 = stat.compare(h2);
+          } else if (stat.gain) {
+            v1 = h1.stats[stat.key];
+            v2 = h2.stats[stat.key];
+            d1 = `${v1} (+${h1.stats[stat.gain]})`;
+            d2 = `${v2} (+${h2.stats[stat.gain]})`;
+          } else {
+            v1 = h1.stats[stat.key];
+            v2 = h2.stats[stat.key];
+            d1 = v1;
+            d2 = v2;
+          }
+          const c1 = v1 > v2 ? 'better' : v1 < v2 ? 'worse' : '';
+          const c2 = v2 > v1 ? 'better' : v2 < v1 ? 'worse' : '';
+          html += `<tr><th>${stat.label}</th><td class="${c1}">${d1}</td><td class="${c2}">${d2}</td></tr>`;
+        });
+
+        html += '</tbody></table>';
+        result.innerHTML = html;
+        result.classList.add('active');
+      });
+    }
+
+    function initDPSCalc() {
+      const btn = document.getElementById('calc-btn');
+      btn.addEventListener('click', () => {
+        const damage = parseFloat(document.getElementById('calc-damage').value) || 0;
+        const ias = parseFloat(document.getElementById('calc-ias').value) || 100;
+        const bat = parseFloat(document.getElementById('calc-bat').value) || 1.7;
+        const critChance = parseFloat(document.getElementById('calc-crit-chance').value) || 0;
+        const critMult = parseFloat(document.getElementById('calc-crit-mult').value) || 2.0;
+        const armor = parseFloat(document.getElementById('calc-armor').value) || 0;
+
+        const attacksPerSec = (100 + ias) / (100 * bat);
+        const avgDmg = damage * (1 + (critChance / 100) * (critMult - 1));
+        const reduction = armor >= 0
+          ? (0.06 * armor) / (1 + 0.06 * armor)
+          : (1 - Math.pow(0.94, Math.abs(armor))) * -1;
+        const effectiveDmg = avgDmg * (1 - (armor >= 0 ? reduction : -reduction));
+        const dps = effectiveDmg * attacksPerSec;
+
+        document.getElementById('dps-value').textContent = dps.toFixed(1);
+        document.getElementById('atk-per-sec').textContent = attacksPerSec.toFixed(2);
+        document.getElementById('dmg-per-hit').textContent = avgDmg.toFixed(1);
+        document.getElementById('dmg-reduction').textContent = (reduction * 100).toFixed(1) + '%';
+        document.getElementById('effective-dmg').textContent = effectiveDmg.toFixed(1);
+        document.getElementById('calc-result').style.display = 'block';
+      });
+    }
+
+    function initEHPCalc() {
+      const btn = document.getElementById('ehp-btn');
+      btn.addEventListener('click', () => {
+        const hp = parseFloat(document.getElementById('ehp-hp').value) || 1000;
+        const armor = parseFloat(document.getElementById('ehp-armor').value) || 0;
+        const magicRes = parseFloat(document.getElementById('ehp-magic-res').value) || 25;
+
+        const physicalMultiplier = 1 + 0.06 * armor;
+        const physicalEHP = hp * physicalMultiplier;
+        const magicalEHP = hp / (1 - magicRes / 100);
+
+        document.getElementById('ehp-physical').textContent = Math.round(physicalEHP);
+        document.getElementById('ehp-magical').textContent = Math.round(magicalEHP);
+        document.getElementById('ehp-result').style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>

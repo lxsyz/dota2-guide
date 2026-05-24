@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOTA 2 攻略站 - 英雄出装、加点、版本解读</title>
+  <meta name="description" content="DOTA 2 中文攻略站，提供英雄出装、技能加点、版本解读、新手教程等全面攻略内容。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/heroes.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">⚔️ <span>DOTA 2</span> 攻略站</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="heroes.html">英雄</a></li>
+        <li><a href="items.html">物品</a></li>
+        <li><a href="guides.html">攻略</a></li>
+        <li><a href="meta.html">版本</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索英雄/物品...">
+        <div class="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="hero-banner">
+      <span class="version-badge">当前版本 7.38a</span>
+      <h1>DOTA 2 攻略站</h1>
+      <p>英雄出装 · 技能加点 · 版本解读 · 新手教程</p>
+    </section>
+
+    <!-- Tier 1 Heroes -->
+    <section>
+      <div class="section-header">
+        <h2>🔥 当前版本强势英雄</h2>
+        <a href="meta.html">查看完整 Tier List →</a>
+      </div>
+      <div class="card-grid" id="top-heroes"></div>
+    </section>
+
+    <!-- Newbie Banner -->
+    <section class="newbie-banner">
+      <h2>🌟 新手从这里开始</h2>
+      <p>第一次接触 DOTA 2？我们准备了完整的入门教程帮你快速上手</p>
+      <a href="guides.html?filter=beginner" class="btn btn-primary">开始学习</a>
+    </section>
+
+    <!-- Latest Guides -->
+    <section>
+      <div class="section-header">
+        <h2>📝 最新攻略</h2>
+        <a href="guides.html">查看全部 →</a>
+      </div>
+      <div class="guide-list" id="latest-guides">
+        <p class="loading">加载中</p>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section>
+      <div class="section-header">
+        <h2>🚀 快速导航</h2>
+      </div>
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))">
+        <a class="card" href="heroes.html" style="padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:8px">🦸</div>
+          <div class="card-title">英雄图鉴</div>
+          <div class="card-meta">全英雄属性、技能、出装方案</div>
+        </a>
+        <a class="card" href="items.html" style="padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:8px">🎒</div>
+          <div class="card-title">物品百科</div>
+          <div class="card-meta">全物品效果、合成路线</div>
+        </a>
+        <a class="card" href="guides.html" style="padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:8px">📚</div>
+          <div class="card-title">攻略中心</div>
+          <div class="card-meta">新手教程、英雄攻略、位置教学</div>
+        </a>
+        <a class="card" href="meta.html" style="padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:8px">📊</div>
+          <div class="card-title">版本动态</div>
+          <div class="card-meta">Tier List、版本解读、阵容推荐</div>
+        </a>
+        <a class="card" href="tools.html" style="padding:24px;text-align:center">
+          <div style="font-size:2rem;margin-bottom:8px">🛠️</div>
+          <div class="card-title">实用工具</div>
+          <div class="card-meta">DPS 计算器、英雄对比、EHP</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
+    <p style="margin-top:8px">本站内容仅供学习参考，游戏素材版权归 Valve 所有</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/heroes.js"></script>
+  <script src="js/guides.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const heroes = await loadJSON('data/heroes.json');
+      if (!heroes) return;
+      const topHeroes = heroes.filter(h => h.tier === 'S');
+      const grid = document.getElementById('top-heroes');
+      if (grid) renderHeroGrid(topHeroes, grid);
+    });
+  </script>
+</body>
+</html>

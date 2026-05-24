@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>版本动态 - DOTA 2 攻略站</title>
+  <meta name="description" content="DOTA 2 当前版本 Tier List、版本更新解读和强势阵容推荐。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/heroes.css">
+  <style>
+    .tier-section { margin-bottom: 32px; }
+    .tier-title {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tier-title .tier-badge { width: 36px; height: 36px; font-size: 1rem; }
+    .tier-title h3 { font-size: 1.1rem; }
+    .tier-heroes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .meta-intro {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+    .meta-intro h2 { font-family: var(--font-heading); color: var(--accent-gold); margin-bottom: 12px; }
+    .meta-intro p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 10px; }
+    .meta-trends {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .trend-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+    }
+    .trend-card h4 { color: var(--accent-gold); margin-bottom: 8px; font-size: 0.95rem; }
+    .trend-card p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; }
+    .patch-link {
+      display: block;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+    .patch-link:hover { border-color: var(--accent-gold); background: var(--bg-card-hover); }
+    .patch-link h4 { font-size: 0.9rem; margin-bottom: 4px; color: var(--text-primary); }
+    .patch-link p { font-size: 0.8rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">⚔️ <span>DOTA 2</span> 攻略站</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="heroes.html">英雄</a></li>
+        <li><a href="items.html">物品</a></li>
+        <li><a href="guides.html">攻略</a></li>
+        <li><a href="meta.html">版本</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索英雄/物品...">
+        <div class="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="section-header">
+      <h2>版本动态</h2>
+      <span class="version-badge">7.38a</span>
+    </div>
+
+    <div class="meta-intro">
+      <h2>7.38a 版本概述</h2>
+      <p>当前版本核心特征：属性加成全面提升15%，小件属性装性价比大幅提高。团队功能性道具加强，梅肯斯姆和烟斗收益更高。</p>
+      <p>版本趋势：<strong>前期对线更重要</strong> → <strong>团战型阵容优于分推</strong> → <strong>高机动性英雄表现更好</strong></p>
+      <a href="guide-detail.html?id=patch-738a" class="btn btn-primary" style="margin-top:12px">查看完整版本解读 →</a>
+    </div>
+
+    <div class="section-header">
+      <h2>🏆 Tier List</h2>
+    </div>
+
+    <div id="tier-list">
+      <p class="loading">加载中</p>
+    </div>
+
+    <div class="section-header" style="margin-top:40px">
+      <h2>📈 版本趋势</h2>
+    </div>
+
+    <div class="meta-trends">
+      <div class="trend-card">
+        <h4>🔺 小件属性装崛起</h4>
+        <p>护腕、系带、挂件性价比提高，前期补刀效率和生存能力显著提升。核心位不再硬憋大件，优先出小件建立对线优势。</p>
+      </div>
+      <div class="trend-card">
+        <h4>🔺 团队道具优先级提高</h4>
+        <p>梅肯斯姆群体回血+20%，烟斗护盾+15%。辅助位应优先制作团队装，4号位梅肯成为版本主流选择。</p>
+      </div>
+      <div class="trend-card">
+        <h4>🔺 高机动性英雄强势</h4>
+        <p>闪烁类英雄（敌法、风暴、幻影刺客）受版本利好，可以快速游走建立节奏优势。分推英雄相对弱势。</p>
+      </div>
+      <div class="trend-card">
+        <h4>🔻 硬Carry后期权重下降</h4>
+        <p>由于前期优势更容易建立，拖后期的纯打钱Carry不再是最优选择。能在中期参团的Carry更受欢迎。</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>📋 版本更新记录</h2>
+    </div>
+
+    <a class="patch-link" href="guide-detail.html?id=patch-738a">
+      <h4>7.38a - 2026年5月20日</h4>
+      <p>属性加成全面调整，团队道具加强，多英雄数值平衡</p>
+    </a>
+    <div class="patch-link">
+      <h4>7.38 - 2026年4月15日</h4>
+      <p>新英雄加入，地图小幅调整，中立物品更新</p>
+    </div>
+    <div class="patch-link">
+      <h4>7.37d - 2026年3月8日</h4>
+      <p>多英雄平衡性调整，蝴蝶闪避从35%降至25%</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/heroes.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const heroes = await loadJSON('data/heroes.json');
+      if (!heroes) return;
+
+      const tierList = document.getElementById('tier-list');
+      const tiers = ['S', 'A', 'B', 'C'];
+      const tierLabels = { S: '统治级', A: '强势', B: '均衡', C: '弱势' };
+
+      let html = '';
+      tiers.forEach(tier => {
+        const tierHeroes = heroes.filter(h => h.tier === tier);
+        if (tierHeroes.length === 0) return;
+        html += `
+          <div class="tier-section">
+            <div class="tier-title">
+              <span class="tier-badge ${getTierClass(tier)}">${tier}</span>
+              <h3>${tierLabels[tier]}（${tierHeroes.length} 个英雄）</h3>
+            </div>
+            <div class="tier-heroes">
+              ${tierHeroes.map(hero => `
+                <a class="hero-card" href="hero-detail.html?id=${hero.id}" style="padding:14px 10px">
+                  <img class="hero-card-avatar" src="${getHeroImage(hero.id)}" alt="${hero.name}"
+                       style="width:56px;height:56px"
+                       onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 56 56%22><rect fill=%22%231f2b45%22 width=%2256%22 height=%2256%22 rx=%2228%22/><text x=%2228%22 y=%2234%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2216%22>${hero.name[0]}</text></svg>'">
+                  <div class="hero-card-name" style="font-size:0.85rem">${hero.name}</div>
+                  <div class="hero-card-meta">
+                    <span class="attr-badge ${getAttrClass(hero.attribute)}" style="font-size:0.65rem">${getAttrName(hero.attribute)}</span>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      });
+      tierList.innerHTML = html;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+/* Hero List Page */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.hero-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 20px 16px;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow);
+  border-color: var(--accent-gold);
+}
+
+.hero-card-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid var(--border-color);
+  background: var(--bg-input);
+  transition: var(--transition);
+}
+
+.hero-card:hover .hero-card-avatar {
+  border-color: var(--accent-gold);
+}
+
+.hero-card-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hero-card-name-en {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.hero-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hero-card .tier-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  font-size: 0.7rem;
+}
+
+/* Hero Detail Page */
+.hero-detail {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+}
+
+.hero-sidebar {
+  position: sticky;
+  top: 84px;
+  align-self: start;
+}
+
+.hero-portrait {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero-portrait img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--border-color);
+  margin-bottom: 16px;
+  background: var(--bg-input);
+}
+
+.hero-portrait h1 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.hero-portrait .hero-name-en {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.hero-portrait .hero-roles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+/* Stats Panel */
+.stats-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stats-panel h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(42,58,94,0.5);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stat-str { color: var(--color-str); }
+.stat-agi { color: var(--color-agi); }
+.stat-int { color: var(--color-int); }
+
+/* Hero Main Content */
+.hero-main {
+  min-width: 0;
+}
+
+/* Skills Section */
+.skills-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.skills-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.skill-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  background: var(--bg-input);
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.skill-item.ultimate .skill-icon {
+  border-color: var(--accent-gold);
+}
+
+.skill-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.skill-info .skill-name-en {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.skill-info p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.skill-type {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  background: rgba(52,152,219,0.15);
+  color: var(--accent-blue);
+  margin-left: 8px;
+}
+
+/* Talent Tree */
+.talent-tree {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.talent-tree h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.talent-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(42,58,94,0.3);
+}
+
+.talent-row:last-child {
+  border-bottom: none;
+}
+
+.talent-level {
+  text-align: center;
+  font-weight: bold;
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  width: 36px;
+}
+
+.talent-option {
+  padding: 8px 12px;
+  background: var(--bg-input);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.talent-option:hover {
+  border-color: var(--accent-gold);
+}
+
+.talent-option:first-child {
+  text-align: right;
+}
+
+.talent-option:last-child {
+  text-align: left;
+}
+
+/* Builds Section */
+.builds-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.builds-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.build-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.build-tab {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.build-tab.active {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+  border-color: var(--accent-gold);
+}
+
+.build-phase {
+  margin-bottom: 16px;
+}
+
+.build-phase h4 {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.build-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.build-item {
+  width: 44px;
+  height: 32px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.build-item:hover {
+  border-color: var(--accent-gold);
+}
+
+.build-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Counters Section */
+.counters-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.counters-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.counters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.counter-group h4 {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.counter-group.good h4 {
+  color: var(--accent-green);
+}
+
+.counter-group.bad h4 {
+  color: var(--accent-red);
+}
+
+.counter-heroes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.counter-hero {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--bg-input);
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+}
+
+.counter-hero img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+/* Tips Section */
+.tips-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.tips-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent-gold);
+}
+
+.tip-block {
+  margin-bottom: 16px;
+}
+
+.tip-block:last-child {
+  margin-bottom: 0;
+}
+
+.tip-block h4 {
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  margin-bottom: 6px;
+}
+
+.tip-block p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Aghanim Section */
+.aghanim-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.aghanim-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+}
+
+.aghanim-card h4 {
+  font-size: 0.85rem;
+  color: var(--accent-purple);
+  margin-bottom: 8px;
+}
+
+.aghanim-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Hero Detail */
+@media (max-width: 900px) {
+  .hero-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-sidebar {
+    position: static;
+  }
+
+  .counters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aghanim-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .talent-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .talent-option:first-child,
+  .talent-option:last-child {
+    text-align: center;
+  }
+}

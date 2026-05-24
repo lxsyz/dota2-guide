@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英雄详情 - DOTA 2 攻略站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/heroes.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">⚔️ <span>DOTA 2</span> 攻略站</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="heroes.html" class="active">英雄</a></li>
+        <li><a href="items.html">物品</a></li>
+        <li><a href="guides.html">攻略</a></li>
+        <li><a href="meta.html">版本</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索英雄/物品...">
+        <div class="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div style="margin-bottom:16px">
+      <a href="heroes.html" style="font-size:0.9rem">← 返回英雄列表</a>
+    </div>
+    <div class="hero-detail" id="hero-detail">
+      <p class="loading">加载中</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/heroes.js"></script>
+</body>
+</html>

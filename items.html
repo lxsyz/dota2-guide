@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>物品百科 - DOTA 2 攻略站</title>
+  <meta name="description" content="DOTA 2 全物品列表，查看物品属性、效果和合成路线。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/items.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">⚔️ <span>DOTA 2</span> 攻略站</a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="heroes.html">英雄</a></li>
+        <li><a href="items.html" class="active">物品</a></li>
+        <li><a href="guides.html">攻略</a></li>
+        <li><a href="meta.html">版本</a></li>
+        <li><a href="tools.html">工具</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" placeholder="搜索英雄/物品...">
+        <div class="search-results"></div>
+      </div>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="section-header">
+      <h2>物品百科</h2>
+    </div>
+
+    <div class="filter-bar" id="item-filters">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="consumable">消耗品</button>
+      <button class="filter-btn" data-filter="basic">基础</button>
+      <button class="filter-btn" data-filter="mid">中级</button>
+      <button class="filter-btn" data-filter="advanced">高级</button>
+      <button class="filter-btn" data-filter="luxury">奢侈品</button>
+    </div>
+
+    <div class="item-grid" id="item-grid">
+      <p class="loading">加载中</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/items.js"></script>
+</body>
+</html>
