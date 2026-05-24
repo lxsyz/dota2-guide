@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR_USERNAME.github.io/dota2-guide/sitemap.xml
+
+# Allow all search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Disallow dev/data files from indexing
+User-agent: *
+Disallow: /data/
