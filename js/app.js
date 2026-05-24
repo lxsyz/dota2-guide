@@ -2,8 +2,14 @@ const HERO_IMG_BASE = 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/
 const ITEM_IMG_BASE = 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/';
 const ABILITY_IMG_BASE = 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/';
 
+const HERO_ID_ALIASES = { anti_mage: 'antimage' };
+
+function normalizeHeroId(id) {
+  return HERO_ID_ALIASES[id] || id;
+}
+
 function getHeroImage(heroId) {
-  return `${HERO_IMG_BASE}${heroId}.png`;
+  return `${HERO_IMG_BASE}${normalizeHeroId(heroId)}.png`;
 }
 
 function getItemImage(itemId) {

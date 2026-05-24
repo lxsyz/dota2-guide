@@ -59,6 +59,6 @@ dota2-guide/
 ## 扩展说明
 
 - 英雄/物品图片使用 Steam CDN 远程加载，离线时显示 fallback
-- 添加新英雄：在 `data/heroes.json` 中按现有格式追加即可
-- 添加新物品：在 `data/items.json` 中追加
+- **更新数据**：运行 `python3 scripts/build_data.py` 从 Valve 官方接口拉取最新英雄/物品
+- 精编英雄数据保存在 `data/heroes.manual.json`，构建时会自动合并
 - 添加新攻略：在 `data/guides.json` 中追加，content 字段支持 Markdown

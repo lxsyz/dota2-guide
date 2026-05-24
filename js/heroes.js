@@ -33,6 +33,8 @@ function filterHeroes(heroes, filter) {
 async function initHeroList() {
   const grid = document.getElementById('hero-grid');
   const filterBar = document.getElementById('hero-filters');
+  const searchInput = document.getElementById('hero-search');
+  const countEl = document.getElementById('hero-count');
   if (!grid) return;
 
   const heroes = await loadHeroes();
@@ -41,7 +43,31 @@ async function initHeroList() {
     return;
   }
 
-  renderHeroGrid(heroes, grid);
+  let currentFilter = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let list = filterHeroes(heroes, currentFilter);
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(h =>
+        h.name.includes(searchQuery) ||
+        h.name_en.toLowerCase().includes(q) ||
+        h.id.includes(q)
+      );
+    }
+    renderHeroGrid(list, grid);
+    if (countEl) countEl.textContent = `共 ${list.length} 名英雄`;
+  }
+
+  applyFilters();
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim();
+      applyFilters();
+    });
+  }
 
   if (filterBar) {
     filterBar.addEventListener('click', (e) => {
@@ -49,9 +75,8 @@ async function initHeroList() {
       if (!btn) return;
       filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      const filtered = filterHeroes(heroes, filter);
-      renderHeroGrid(filtered, grid);
+      currentFilter = btn.dataset.filter;
+      applyFilters();
     });
   }
 }
@@ -69,13 +94,22 @@ async function initHeroDetail() {
   const heroes = await loadHeroes();
   if (!heroes) return;
 
-  const hero = heroes.find(h => h.id === heroId);
+  const hero = heroes.find(h => h.id === normalizeHeroId(heroId) || h.id === heroId);
   if (!hero) {
     container.innerHTML = '<p class="text-center text-muted">英雄未找到</p>';
     return;
   }
 
-  document.title = `${hero.name} - DOTA 2 攻略站`;
+  document.title = `${hero.name} 出装加点攻略 - DOTA 2 攻略站`;
+  if (typeof setPageMeta === 'function') {
+    setPageMeta({
+      title: document.title,
+      description: `${hero.name}（${hero.name_en}）最新出装、技能加点、天赋选择与对线团战技巧。属性：${getAttrName(hero.attribute)}，定位：${hero.roles.join('、')}。`,
+      canonical: `https://lxsyz.github.io/dota2-guide/hero-detail.html?id=${hero.id}`,
+      keywords: `${hero.name},${hero.name_en},DOTA2出装,DOTA2加点,${hero.name}攻略`,
+    });
+    injectJsonLd(heroSchema(hero));
+  }
 
   container.innerHTML = `
     <aside class="hero-sidebar">
@@ -249,7 +283,8 @@ function renderBuildContent(build) {
 
 function renderCountersSection(hero, allHeroes) {
   function getHeroName(id) {
-    const found = allHeroes.find(h => h.id === id);
+    const nid = normalizeHeroId(id);
+    const found = allHeroes.find(h => h.id === nid);
     return found ? found.name : id;
   }
 
@@ -261,10 +296,10 @@ function renderCountersSection(hero, allHeroes) {
           <h4>✅ 克制英雄</h4>
           <div class="counter-heroes">
             ${hero.counters.good_against.map(id => `
-              <a class="counter-hero" href="hero-detail.html?id=${id}">
-                <img src="${getHeroImage(id)}" alt="${getHeroName(id)}"
+              <a class="counter-hero" href="hero-detail.html?id=${normalizeHeroId(id)}">
+                <img src="${getHeroImage(id)}" alt="${getHeroName(normalizeHeroId(id))}"
                      onerror="this.style.display='none'">
-                <span>${getHeroName(id)}</span>
+                <span>${getHeroName(normalizeHeroId(id))}</span>
               </a>
             `).join('')}
           </div>
@@ -273,10 +308,10 @@ function renderCountersSection(hero, allHeroes) {
           <h4>❌ 被克制</h4>
           <div class="counter-heroes">
             ${hero.counters.bad_against.map(id => `
-              <a class="counter-hero" href="hero-detail.html?id=${id}">
-                <img src="${getHeroImage(id)}" alt="${getHeroName(id)}"
+              <a class="counter-hero" href="hero-detail.html?id=${normalizeHeroId(id)}">
+                <img src="${getHeroImage(id)}" alt="${getHeroName(normalizeHeroId(id))}"
                      onerror="this.style.display='none'">
-                <span>${getHeroName(id)}</span>
+                <span>${getHeroName(normalizeHeroId(id))}</span>
               </a>
             `).join('')}
           </div>

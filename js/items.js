@@ -41,6 +41,8 @@ function filterItems(items, filter) {
 async function initItemList() {
   const grid = document.getElementById('item-grid');
   const filterBar = document.getElementById('item-filters');
+  const searchInput = document.getElementById('item-search');
+  const countEl = document.getElementById('item-count');
   if (!grid) return;
 
   const items = await loadItems();
@@ -49,7 +51,31 @@ async function initItemList() {
     return;
   }
 
-  renderItemGrid(items, grid);
+  let currentFilter = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let list = filterItems(items, currentFilter);
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(i =>
+        i.name.includes(searchQuery) ||
+        i.name_en.toLowerCase().includes(q) ||
+        i.id.includes(q)
+      );
+    }
+    renderItemGrid(list, grid);
+    if (countEl) countEl.textContent = `共 ${list.length} 件物品`;
+  }
+
+  applyFilters();
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim();
+      applyFilters();
+    });
+  }
 
   if (filterBar) {
     filterBar.addEventListener('click', (e) => {
@@ -57,9 +83,8 @@ async function initItemList() {
       if (!btn) return;
       filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      const filtered = filterItems(items, filter);
-      renderItemGrid(filtered, grid);
+      currentFilter = btn.dataset.filter;
+      applyFilters();
     });
   }
 }
@@ -83,7 +108,16 @@ async function initItemDetail() {
     return;
   }
 
-  document.title = `${item.name} - DOTA 2 攻略站`;
+  document.title = `${item.name} 物品效果与合成 - DOTA 2 攻略站`;
+  if (typeof setPageMeta === 'function') {
+    setPageMeta({
+      title: document.title,
+      description: `${item.name}（${item.name_en}）：价格 ${item.cost} 金币。${(item.description || '').slice(0, 100)}`,
+      canonical: `https://lxsyz.github.io/dota2-guide/item-detail.html?id=${item.id}`,
+      keywords: `${item.name},DOTA2物品,${item.name_en},合成路线`,
+    });
+    injectJsonLd(itemSchema(item));
+  }
 
   const statsHtml = Object.keys(item.stats).length > 0
     ? `<div class="item-stats">
