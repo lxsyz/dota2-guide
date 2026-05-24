@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR_USERNAME.github.io/dota2-guide/sitemap.xml
+Sitemap: https://lxsyz.github.io/dota2-guide/sitemap.xml
 
 # Allow all search engine crawlers
 User-agent: Googlebot
