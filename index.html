@@ -19,7 +19,7 @@
   <meta property="og:locale" content="zh_CN">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DOTA 2 攻略站 - 英雄出装、加点、版本解读">
   <meta name="twitter:description" content="DOTA 2 中文攻略站，全英雄出装加点、版本解读、新手教程。">
 
@@ -74,10 +74,29 @@
   </script> -->
 
   <!-- Google AdSense (替换 ca-pub-XXXXXXX 为你的发布商 ID) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script> -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <script>
+    // AdSense fallback: 如果 AdSense 被屏蔽或加载失败，显示站内广告
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var adSlots = document.querySelectorAll('.ad-slot');
+        adSlots.forEach(function(slot) {
+          var ins = slot.querySelector('.adsbygoogle');
+          if (ins && (!ins.getAttribute('data-adsbygoogle-status') || ins.getAttribute('data-adsbygoogle-status') === 'error')) {
+            var wrapper = slot.closest('.ad-container');
+            if (wrapper) {
+              var fallback = wrapper.querySelector('.ad-fallback');
+              if (fallback) fallback.style.display = 'block';
+            }
+          }
+        });
+      }, 3000);
+    });
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/heroes.css">
+  <link rel="stylesheet" href="css/ads.css">
 </head>
 <body>
   <header class="site-header">
@@ -90,6 +109,7 @@
         <li><a href="guides.html">攻略</a></li>
         <li><a href="meta.html">版本</a></li>
         <li><a href="tools.html">工具</a></li>
+        <li><a href="analytics.html">📊 后台</a></li>
       </ul>
       <div class="nav-search">
         <input type="text" placeholder="搜索英雄/物品...">
@@ -105,6 +125,9 @@
       <h1>DOTA 2 攻略站</h1>
       <p>英雄出装 · 技能加点 · 版本解读 · 新手教程</p>
     </section>
+
+    <!-- 广告位：顶部横幅 -->
+    <div id="ad-header"></div>
 
     <!-- Tier 1 Heroes -->
     <section>
@@ -168,6 +191,9 @@
     </section>
   </main>
 
+  <!-- 广告位：底部横幅 -->
+  <div id="ad-footer"></div>
+
   <footer class="site-footer">
     <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
     <p style="margin-top:8px">本站内容仅供学习参考，游戏素材版权归 Valve 所有</p>
@@ -176,6 +202,7 @@
   <script src="js/app.js"></script>
   <script src="js/heroes.js"></script>
   <script src="js/guides.js"></script>
+  <script src="js/ads.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       const heroes = await loadJSON('data/heroes.json');

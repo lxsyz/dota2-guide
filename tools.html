@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>实用工具 - DOTA 2 攻略站</title>
-  <meta name="description" content="DOTA 2 实用工具：英雄对比器、DPS 计算器。">
+  <meta name="description" content="DOTA 2 实用工具：英雄对比器、DPS 计算器、EHP 有效生命值计算器。对比英雄属性，计算每秒伤害输出。">
+  <meta name="keywords" content="DOTA2工具,DOTA2计算器,DOTA2 DPS计算器,DOTA2英雄对比,DOTA2 EHP计算器">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lxsyz.github.io/dota2-guide/tools.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="实用工具 - DOTA 2 攻略站">
+  <meta property="og:description" content="DOTA 2 实用工具：英雄对比器、DPS 计算器、EHP 有效生命值计算器。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lxsyz.github.io/dota2-guide/tools.html">
+  <meta property="og:site_name" content="DOTA 2 攻略站">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="实用工具 - DOTA 2 攻略站">
+  <meta name="twitter:description" content="DOTA 2 实用工具：英雄对比器、DPS 计算器、EHP 有效生命值计算器。">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/heroes.css">
+  <link rel="stylesheet" href="css/ads.css">
   <style>
     .tools-grid {
       display: grid;
@@ -208,6 +225,7 @@
         <li><a href="guides.html">攻略</a></li>
         <li><a href="meta.html">版本</a></li>
         <li><a href="tools.html">工具</a></li>
+        <li><a href="analytics.html">📊 后台</a></li>
       </ul>
       <div class="nav-search">
         <input type="text" placeholder="搜索英雄/物品...">
@@ -221,6 +239,9 @@
     <div class="section-header">
       <h2>🛠️ 实用工具</h2>
     </div>
+
+    <!-- 广告位：顶部横幅 -->
+    <div id="ad-header"></div>
 
     <div class="tools-grid">
       <!-- Hero Comparator -->
@@ -330,11 +351,15 @@
     </div>
   </main>
 
+  <!-- 广告位：底部横幅 -->
+  <div id="ad-footer"></div>
+
   <footer class="site-footer">
     <p>DOTA 2 攻略站 - 非官方社区攻略网站 | DOTA 2 是 Valve Corporation 的注册商标</p>
   </footer>
 
   <script src="js/app.js"></script>
+  <script src="js/ads.js"></script>
   <script>
     let allHeroes = [];
 

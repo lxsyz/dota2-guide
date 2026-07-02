@@ -1,0 +1,130 @@
+/* 广告容器 */
+.ad-container {
+  margin: 20px auto;
+  text-align: center;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+}
+
+.ad-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  text-align: center;
+  background: rgba(0,0,0,0.2);
+}
+
+.ad-slot {
+  padding: 12px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 横幅广告 */
+.ad-horizontal {
+  max-width: 970px;
+  width: 100%;
+}
+
+.ad-horizontal .ad-slot {
+  min-height: 90px;
+}
+
+/* 竖版广告 */
+.ad-vertical {
+  max-width: 300px;
+}
+
+.ad-vertical .ad-slot {
+  min-height: 250px;
+}
+
+/* 矩形广告 */
+.ad-rectangle {
+  max-width: 336px;
+}
+
+.ad-rectangle .ad-slot {
+  min-height: 280px;
+}
+
+/* 原生广告 */
+.ad-native {
+  max-width: 100%;
+  background: transparent;
+  border: 1px dashed var(--border-color);
+}
+
+.ad-native .ad-slot {
+  min-height: 100px;
+}
+
+/* 广告 Fallback */
+.ad-fallback {
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(212,168,67,0.05));
+}
+
+.ad-fallback-content {
+  text-align: center;
+}
+
+.ad-fallback-content p {
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ad-fallback-content small {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* 侧边栏广告 */
+.ad-sidebar-sticky {
+  position: sticky;
+  top: 80px;
+}
+
+/* 内容中广告 */
+.ad-incontent-wrapper {
+  margin: 24px 0;
+}
+
+/* 列表内嵌广告 */
+.ad-list-item {
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  background: var(--bg-card);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .ad-horizontal .ad-slot {
+    min-height: 50px;
+  }
+
+  .ad-vertical {
+    max-width: 100%;
+  }
+
+  .ad-container {
+    margin: 12px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .ad-horizontal .ad-slot {
+    min-height: 50px;
+    padding: 8px;
+  }
+}

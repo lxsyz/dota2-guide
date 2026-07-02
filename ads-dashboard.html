@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>广告数据看板 - DOTA 2 攻略站</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ads.css">
+  <style>
+    .dashboard-header {
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+      padding: 30px 20px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 30px;
+      border: 1px solid var(--border-color);
+    }
+    .dashboard-header h1 {
+      color: var(--accent-gold);
+      font-family: var(--font-heading);
+      margin-bottom: 8px;
+    }
+    .dashboard-header p {
+      color: var(--text-secondary);
+    }
+    .revenue-highlight {
+      background: linear-gradient(135deg, rgba(212,168,67,0.2), rgba(212,168,67,0.05));
+      border: 2px solid var(--accent-gold);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .revenue-highlight .revenue-value {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--accent-gold);
+      font-family: var(--font-heading);
+    }
+    .revenue-highlight .revenue-label {
+      color: var(--text-secondary);
+      margin-top: 8px;
+    }
+    .ad-slot-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: var(--transition);
+    }
+    .ad-slot-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+    .ad-slot-card h3 {
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ad-slot-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .ad-slot-stat {
+      text-align: center;
+    }
+    .ad-slot-stat .stat-num {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+    .ad-slot-stat .stat-name {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .progress-bar {
+      background: var(--bg-input);
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-gold), #f0c050);
+      transition: width 0.5s ease;
+    }
+    .tips-section {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      margin-top: 30px;
+    }
+    .tips-section h2 {
+      color: var(--accent-gold);
+      margin-bottom: 16px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      background: var(--bg-input);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+    }
+    .tip-icon {
+      font-size: 1.5rem;
+    }
+    .tip-content h4 {
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+    .tip-content p {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="site-logo">💰 <span>广告</span> 数据看板</a>
+      <ul class="nav-links">
+        <li><a href="index.html">← 返回主站</a></li>
+        <li><a href="analytics.html">综合后台</a></li>
+        <li><a href="ads-dashboard.html" class="active">广告看板</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h1>💰 广告数据看板</h1>
+      <p>实时监控广告效果，优化变现收益</p>
+    </div>
+
+    <!-- 收入高亮卡片 -->
+    <div class="revenue-highlight">
+      <div class="revenue-value" id="total-revenue">$0.00</div>
+      <div class="revenue-label">今日广告收入估算</div>
+    </div>
+
+    <!-- 关键指标 -->
+    <div class="stats-grid" id="key-stats" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:30px"></div>
+
+    <!-- 各广告位数据 -->
+    <h2 style="color:var(--accent-gold);margin-bottom:16px">📊 各广告位效果</h2>
+    <div id="ad-slots-list"></div>
+
+    <!-- 收入优化建议 -->
+    <div class="tips-section">
+      <h2>💡 收入优化建议</h2>
+      <div class="tip-item">
+        <div class="tip-icon">📍</div>
+        <div class="tip-content">
+          <h4>优化广告位位置</h4>
+          <p>首屏广告（header）的CTR通常最高。确保广告位在用户视线焦点处，但不要影响用户体验。</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-content">
+          <h4>提高内容相关性</h4>
+          <p>AdSense 会根据页面内容匹配广告。确保页面关键词清晰，吸引游戏相关的广告主投放。</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">📱</div>
+        <div class="tip-content">
+          <h4>移动端优化</h4>
+          <p>移动端流量占比通常超过50%。确保移动端广告位显示正常，使用响应式广告格式。</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">⚡</div>
+        <div class="tip-content">
+          <h4>页面加载速度</h4>
+          <p>页面加载速度影响广告曝光。优化图片和JS加载，确保广告位能快速渲染。</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-content">
+          <h4>A/B 测试广告位</h4>
+          <p>定期测试不同广告位组合和位置，找到最佳配置。避免广告过多影响用户体验。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>DOTA 2 攻略站 - 广告数据看板 | 数据存储于本地浏览器</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/ads.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAdDashboard();
+    });
+
+    function renderAdDashboard() {
+      const settings = JSON.parse(localStorage.getItem('d2g_settings') || '{}');
+      const cpcRate = settings.cpcRate || 0.5;
+      const cpmRate = settings.cpmRate || 2.0;
+
+      const slotStats = AdTracker.getStatsBySlot();
+      const todayStats = AdTracker.getTodayStats();
+
+      const totalImpressions = slotStats.reduce((sum, s) => sum + s.impressions, 0);
+      const totalClicks = slotStats.reduce((sum, s) => sum + s.clicks, 0);
+      const totalRevenue = totalClicks * cpcRate + (totalImpressions / 1000) * cpmRate;
+      const avgCTR = totalImpressions > 0 ? (totalClicks / totalImpressions * 100).toFixed(2) : 0;
+
+      // 总收入
+      document.getElementById('total-revenue').textContent = '$' + totalRevenue.toFixed(2);
+
+      // 关键指标
+      const stats = [
+        { label: '今日曝光量', value: todayStats.impressions },
+        { label: '今日点击量', value: todayStats.clicks },
+        { label: '今日CTR', value: todayStats.ctr + '%' },
+        { label: '总曝光量', value: totalImpressions },
+        { label: '总点击量', value: totalClicks },
+        { label: '平均CTR', value: avgCTR + '%' },
+      ];
+      document.getElementById('key-stats').innerHTML = stats.map(s => `
+        <div class="stat-card">
+          <div class="stat-label">${s.label}</div>
+          <div class="stat-value">${s.value}</div>
+        </div>
+      `).join('');
+
+      // 各广告位卡片
+      const slotNames = {
+        'ad-header': '顶部横幅',
+        'ad-sidebar': '侧边栏',
+        'ad-incontent': '内容中',
+        'ad-footer': '底部横幅',
+        'ad-list': '列表内嵌',
+      };
+      const maxImpressions = Math.max(...slotStats.map(s => s.impressions), 1);
+
+      document.getElementById('ad-slots-list').innerHTML = slotStats.map(s => {
+        const revenue = s.clicks * cpcRate + (s.impressions / 1000) * cpmRate;
+        const ctrPercent = parseFloat(s.ctr) || 0;
+        const ctrColor = ctrPercent > 3 ? 'var(--accent-green)' : ctrPercent > 1 ? 'var(--accent-gold)' : 'var(--accent-red)';
+        return `
+          <div class="ad-slot-card">
+            <h3>
+              <span>${slotNames[s.slot] || s.slot}</span>
+              <span style="font-size:0.9rem;color:var(--accent-gold)">$${revenue.toFixed(2)}</span>
+            </h3>
+            <div class="ad-slot-stats">
+              <div class="ad-slot-stat">
+                <div class="stat-num">${s.impressions.toLocaleString()}</div>
+                <div class="stat-name">曝光量</div>
+              </div>
+              <div class="ad-slot-stat">
+                <div class="stat-num">${s.clicks.toLocaleString()}</div>
+                <div class="stat-name">点击量</div>
+              </div>
+              <div class="ad-slot-stat">
+                <div class="stat-num" style="color:${ctrColor}">${s.ctr}%</div>
+                <div class="stat-name">CTR</div>
+              </div>
+              <div class="ad-slot-stat">
+                <div class="stat-num">$${revenue.toFixed(2)}</div>
+                <div class="stat-name">收入</div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:${(s.impressions / maxImpressions * 100)}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+  </script>
+</body>
+</html>

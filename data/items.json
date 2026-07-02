@@ -14,7 +14,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "orb_of_frost",
@@ -28,7 +34,13 @@
     "passive": "Frost：Your attacks slow the target's movement by -13% (-6% against melee targets), and reduces Health Restoration by 13%. Lasts for 3 seconds.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "slark",
+      "monkey_king",
+      "ursa",
+      "life_stealer",
+      "riki"
+    ]
   },
   {
     "id": "buckler",
@@ -47,7 +59,13 @@
     "components": [
       "ring_of_protection"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "chen",
+      "dazzle",
+      "omniknight",
+      "abaddon",
+      "wisp"
+    ]
   },
   {
     "id": "ring_of_basilius",
@@ -66,7 +84,13 @@
     "components": [
       "sobi_mask"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "vengefulspirit",
+      "chen"
+    ]
   },
   {
     "id": "headdress",
@@ -128,7 +152,13 @@
       "circlet",
       ""
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "spirit_breaker",
+      "pudge",
+      "bounty_hunter",
+      "earth_spirit",
+      "tusk"
+    ]
   },
   {
     "id": "tranquil_boots",
@@ -151,7 +181,13 @@
       "wind_lace",
       "ring_of_regen"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "witch_doctor",
+      "lion",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "vitality_booster",
@@ -203,7 +239,13 @@
       "orb_of_frost",
       "blight_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "slark",
+      "monkey_king",
+      "ursa",
+      "life_stealer",
+      "riki"
+    ]
   },
   {
     "id": "falcon_blade",
@@ -228,7 +270,13 @@
       "fluffy_hat",
       "sobi_mask"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "juggernaut",
+      "sven",
+      "skeleton_king",
+      "chaos_knight"
+    ]
   },
   {
     "id": "point_booster",
@@ -264,7 +312,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "faceless_void",
+      "juggernaut",
+      "antimage",
+      "terrorblade"
+    ]
   },
   {
     "id": "pavise",
@@ -289,7 +343,13 @@
       "fluffy_hat",
       "ring_of_protection"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "platemail",
@@ -306,7 +366,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "tidehunter",
+      "centaur",
+      "abyssal_underlord",
+      "bristleback"
+    ]
   },
   {
     "id": "aghanims_shard_roshan",
@@ -334,7 +400,13 @@
     "passive": "Ability Upgrade：Upgrades an existing ability or adds a new ability to your hero.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "arcane_boots",
@@ -359,7 +431,13 @@
       "ring_of_basilius",
       "wizard_hat"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "zuus",
+      "lina"
+    ]
   },
   {
     "id": "ancient_janggo",
@@ -381,7 +459,13 @@
       "belt_of_strength",
       "wind_lace"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "chaos_knight",
+      "sven",
+      "skeleton_king",
+      "lycan",
+      "beastmaster"
+    ]
   },
   {
     "id": "veil_of_discord",
@@ -406,7 +490,13 @@
       "robe",
       "fluffy_hat"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "leshrac",
+      "lina",
+      "sand_king",
+      "earthshaker"
+    ]
   },
   {
     "id": "mekansm",
@@ -426,7 +516,13 @@
       "headdress",
       "chainmail"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "chen",
+      "dazzle",
+      "omniknight",
+      "wisp",
+      "abaddon"
+    ]
   },
   {
     "id": "essence_distiller",
@@ -470,7 +566,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "faceless_void",
+      "juggernaut",
+      "alchemist",
+      "sven",
+      "skeleton_king"
+    ]
   },
   {
     "id": "necronomicon",
@@ -513,7 +615,13 @@
       "shadow_amulet",
       "shawl"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "witch_doctor",
+      "lion",
+      "shadow_shaman",
+      "dazzle"
+    ]
   },
   {
     "id": "demon_edge",
@@ -530,7 +638,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "vladmir",
@@ -554,7 +668,13 @@
       "lifesteal",
       "blades_of_attack"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "lycan",
+      "beastmaster",
+      "chen",
+      "enigma",
+      "vengefulspirit"
+    ]
   },
   {
     "id": "force_staff",
@@ -576,7 +696,13 @@
       "staff_of_wizardry",
       "fluffy_hat"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "shadow_shaman",
+      "dazzle"
+    ]
   },
   {
     "id": "holy_locket",
@@ -644,7 +770,13 @@
       "energy_booster",
       "void_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "lion",
+      "shadow_shaman",
+      "oracle"
+    ]
   },
   {
     "id": "specialists_array",
@@ -667,7 +799,13 @@
       "blade_of_alacrity",
       "broadsword"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "solar_crest",
@@ -695,7 +833,13 @@
       "chainmail",
       "wind_lace"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "dazzle",
+      "oracle",
+      "vengefulspirit",
+      "wisp",
+      "abaddon"
+    ]
   },
   {
     "id": "cyclone",
@@ -720,7 +864,13 @@
       "void_stone",
       "wind_lace"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "invoker",
+      "puck",
+      "death_prophet",
+      "leshrac",
+      "lina"
+    ]
   },
   {
     "id": "spirit_vessel",
@@ -745,7 +895,13 @@
       "urn_of_shadows",
       "diadem"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "spirit_breaker",
+      "pudge",
+      "bounty_hunter",
+      "earth_spirit",
+      "tusk"
+    ]
   },
   {
     "id": "ultimate_orb",
@@ -762,7 +918,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "medusa",
+      "morphling",
+      "antimage",
+      "phantom_assassin",
+      "juggernaut"
+    ]
   },
   {
     "id": "reaver",
@@ -779,7 +941,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "centaur",
+      "axe"
+    ]
   },
   {
     "id": "eagle",
@@ -796,7 +964,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "drow_ranger",
+      "sniper",
+      "juggernaut",
+      "faceless_void"
+    ]
   },
   {
     "id": "mystic_staff",
@@ -813,7 +987,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "invoker",
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "puck"
+    ]
   },
   {
     "id": "dagon",
@@ -840,7 +1020,13 @@
       "crown",
       "wizard_hat"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "nyx_assassin",
+      "puck",
+      "tinker",
+      "pugna",
+      "lion"
+    ]
   },
   {
     "id": "mage_slayer",
@@ -868,7 +1054,13 @@
       "blades_of_attack",
       "orb_of_venom"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "ember_spirit",
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "monkey_king"
+    ]
   },
   {
     "id": "orchid",
@@ -939,7 +1131,13 @@
       "lesser_crit",
       "voodoo_mask"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "storm_spirit",
+      "queenofpain",
+      "puck",
+      "invoker",
+      "silencer"
+    ]
   },
   {
     "id": "relic",
@@ -956,7 +1154,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "spectre",
+      "alchemist",
+      "phantom_assassin",
+      "ember_spirit",
+      "kunkka"
+    ]
   },
   {
     "id": "pipe",
@@ -980,7 +1184,13 @@
       "shawl",
       ""
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "abyssal_underlord",
+      "tidehunter",
+      "centaur",
+      "omniknight",
+      "abaddon"
+    ]
   },
   {
     "id": "wraith_pact",
@@ -1046,7 +1256,14 @@
       "ogre_axe",
       "blade_of_alacrity"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "invoker",
+      "zuus",
+      "lina",
+      "lion",
+      "witch_doctor",
+      "rubick"
+    ]
   },
   {
     "id": "boots_of_bearing",
@@ -1098,7 +1315,13 @@
       "arcane_boots",
       "mekansm"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "chen",
+      "omniknight",
+      "dazzle",
+      "abaddon",
+      "wisp"
+    ]
   },
   {
     "id": "necronomicon_3",
@@ -1147,7 +1370,13 @@
       "tiara_of_selemene",
       ""
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "leshrac",
+      "death_prophet",
+      "bristleback",
+      "shredder"
+    ]
   },
   {
     "id": "refresher",
@@ -1170,7 +1399,13 @@
       "ring_of_tarrasque",
       "tiara_of_selemene"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "enigma",
+      "tidehunter",
+      "magnataur",
+      "zuus",
+      "earthshaker"
+    ]
   },
   {
     "id": "sheepstick",
@@ -1192,7 +1427,13 @@
       "mystic_staff",
       "tiara_of_selemene"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "invoker",
+      "storm_spirit",
+      "puck",
+      "queenofpain",
+      "tinker"
+    ]
   },
   {
     "id": "dagon_3",
@@ -1439,7 +1680,13 @@
     "passive": "Quell：Increases attack damage against non-hero units by 8 for melee heroes, and 4 for ranged.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "sven",
+      "phantom_assassin",
+      "antimage",
+      "juggernaut"
+    ]
   },
   {
     "id": "stout_shield",
@@ -1453,7 +1700,13 @@
     "passive": "Damage Block：Grants a 50% chance to block 20 damage from incoming attacks on melee heroes, and 8 damage on ranged.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "recipe_iron_talon",
@@ -1484,7 +1737,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "invoker",
+      "puck"
+    ]
   },
   {
     "id": "slippers",
@@ -1501,7 +1760,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "antimage",
+      "juggernaut",
+      "drow_ranger",
+      "sniper"
+    ]
   },
   {
     "id": "gauntlets",
@@ -1518,7 +1783,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "centaur"
+    ]
   },
   {
     "id": "recipe_magic_wand",
@@ -1549,7 +1820,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "ring_of_protection",
@@ -1566,7 +1843,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "ring_of_regen",
@@ -1729,7 +2012,13 @@
     "passive": "Magical Damage Block：Consumes a charge to block 120 magic damage from damage instances over 75 damage. Comes with 6 charges. When the charges are gone, the item disappears.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "wind_lace",
@@ -1746,7 +2035,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "wizard_hat",
@@ -1945,7 +2240,13 @@
     "passive": "Lesser Corruption：Your attacks reduce the target's armor by -2 for 3 seconds.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "templar_assassin",
+      "weaver",
+      "clinkz",
+      "sniper"
+    ]
   },
   {
     "id": "recipe_urn_of_shadows",
@@ -2015,7 +2316,13 @@
     "passive": "Poison Attack：Poisons the target, dealing 10 magical damage per second. Lasts for 3 seconds.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "slark",
+      "monkey_king",
+      "ursa",
+      "life_stealer",
+      "riki"
+    ]
   },
   {
     "id": "recipe_veil_of_discord",
@@ -2119,7 +2426,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "axe",
+      "centaur"
+    ]
   },
   {
     "id": "robe",
@@ -2136,7 +2449,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "invoker",
+      "puck"
+    ]
   },
   {
     "id": "boots_of_elves",
@@ -2153,7 +2472,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "drow_ranger",
+      "sniper"
+    ]
   },
   {
     "id": "crown",
@@ -2170,7 +2495,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "gloves",
@@ -2263,7 +2594,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "boots",
@@ -2409,7 +2746,13 @@
     "passive": "Spell Lifesteal：Heals the wearer for a percentage of spell damage dealt to enemies.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "leshrac",
+      "death_prophet",
+      "bristleback",
+      "shredder",
+      "storm_spirit"
+    ]
   },
   {
     "id": "recipe_kaya",
@@ -2524,7 +2867,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "void_stone",
@@ -2541,7 +2890,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "leshrac",
+      "puck"
+    ]
   },
   {
     "id": "recipe_sheepstick",
@@ -2676,7 +3031,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "antimage",
+      "terrorblade"
+    ]
   },
   {
     "id": "javelin",
@@ -2690,7 +3051,13 @@
     "passive": "Pierce：Grants each attack a 25% chance to pierce through evasion and deal 60 bonus magical damage.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "faceless_void",
+      "sniper",
+      "windrunner",
+      "juggernaut"
+    ]
   },
   {
     "id": "lifesteal",
@@ -2707,7 +3074,13 @@
     "passive": "Lifesteal：Heals the attacker for a percentage of physical damage dealt.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "skeleton_king"
+    ]
   },
   {
     "id": "gem",
@@ -2738,7 +3111,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "recipe_spirit_vessel",
@@ -2875,7 +3254,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord",
+      "bristleback"
+    ]
   },
   {
     "id": "broadsword",
@@ -2892,7 +3277,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "diadem",
@@ -2909,7 +3300,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "ogre_axe",
@@ -2926,7 +3323,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "axe",
+      "centaur"
+    ]
   },
   {
     "id": "staff_of_wizardry",
@@ -2943,7 +3346,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "invoker",
+      "puck"
+    ]
   },
   {
     "id": "blade_of_alacrity",
@@ -2960,7 +3369,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "terrorblade"
+    ]
   },
   {
     "id": "blitz_knuckles",
@@ -2977,7 +3392,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "faceless_void",
+      "juggernaut",
+      "sven",
+      "ember_spirit"
+    ]
   },
   {
     "id": "recipe_harpoon",
@@ -3162,7 +3583,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "recipe_shivas_guard",
@@ -3221,7 +3648,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "recipe_manta",
@@ -3314,7 +3747,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "invoker",
+      "puck"
+    ]
   },
   {
     "id": "recipe_overwhelming_blink",
@@ -3398,7 +3837,15 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "tidehunter",
+      "earthshaker",
+      "sand_king",
+      "enigma",
+      "puck",
+      "magnataur"
+    ]
   },
   {
     "id": "harpoon",
@@ -3426,7 +3873,13 @@
       "echo_sabre",
       "diadem"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "slark",
+      "life_stealer"
+    ]
   },
   {
     "id": "trident",
@@ -3589,7 +4042,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "mutation_tombstone",
@@ -3639,7 +4098,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "mango_tree",
@@ -3748,7 +4213,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "ward_sentry",
@@ -3762,7 +4233,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "courier",
@@ -3790,7 +4267,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "branches",
@@ -3807,7 +4290,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "clarity",
@@ -3821,7 +4310,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "faerie_fire",
@@ -3838,7 +4333,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "enchanted_mango",
@@ -3855,7 +4356,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "tome_of_knowledge",
@@ -3883,7 +4390,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "tango",
@@ -3897,7 +4410,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "flask",
@@ -3911,7 +4430,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "tpscroll",
@@ -3925,7 +4450,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "flying_courier",
@@ -4018,7 +4549,13 @@
       "vitality_booster",
       "ring_of_health"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "dragon_lance",
@@ -4042,7 +4579,13 @@
       "blade_of_alacrity",
       "belt_of_strength"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "drow_ranger",
+      "sniper",
+      "luna",
+      "medusa",
+      "terrorblade"
+    ]
   },
   {
     "id": "mask_of_madness",
@@ -4064,7 +4607,13 @@
       "broadsword",
       "lifesteal"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "faceless_void",
+      "sven",
+      "luna",
+      "juggernaut",
+      "skeleton_king"
+    ]
   },
   {
     "id": "lesser_crit",
@@ -4084,7 +4633,13 @@
       "claymore",
       "blades_of_attack"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "kaya",
@@ -4108,7 +4663,13 @@
       "staff_of_wizardry",
       "robe"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "leshrac",
+      "storm_spirit",
+      "puck"
+    ]
   },
   {
     "id": "sange",
@@ -4132,7 +4693,13 @@
       "ogre_axe",
       "belt_of_strength"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "life_stealer",
+      "dragon_knight"
+    ]
   },
   {
     "id": "yasha",
@@ -4156,7 +4723,13 @@
       "blade_of_alacrity",
       "boots_of_elves"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "juggernaut",
+      "phantom_assassin",
+      "terrorblade",
+      "spectre"
+    ]
   },
   {
     "id": "blade_mail",
@@ -4178,7 +4751,13 @@
       "broadsword",
       "splintmail"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "legion_commander",
+      "bristleback",
+      "spectre",
+      "centaur"
+    ]
   },
   {
     "id": "armlet",
@@ -4205,7 +4784,13 @@
       "gloves",
       "blades_of_attack"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "chaos_knight",
+      "life_stealer",
+      "huskar",
+      "skeleton_king",
+      "alchemist"
+    ]
   },
   {
     "id": "diffusal_blade",
@@ -4227,7 +4812,13 @@
       "blade_of_alacrity",
       "robe"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_lancer",
+      "riki",
+      "spectre",
+      "naga_siren",
+      "slark"
+    ]
   },
   {
     "id": "helm_of_the_dominator",
@@ -4251,7 +4842,13 @@
       "helm_of_iron_will",
       "crown"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "lycan",
+      "beastmaster",
+      "chen",
+      "enigma",
+      "enigma"
+    ]
   },
   {
     "id": "consecrated_wraps",
@@ -4301,7 +4898,13 @@
       "broadsword",
       "void_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "slark",
+      "life_stealer"
+    ]
   },
   {
     "id": "meteor_hammer",
@@ -4329,7 +4932,13 @@
       "kaya",
       "crown"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "naga_siren",
+      "treant",
+      "elder_titan",
+      "abyssal_underlord",
+      "phoenix"
+    ]
   },
   {
     "id": "basher",
@@ -4444,7 +5053,13 @@
       "blitz_knuckles",
       "shadow_amulet"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "slark",
+      "sniper",
+      "drow_ranger",
+      "nevermore",
+      "kunkka"
+    ]
   },
   {
     "id": "heavens_halberd",
@@ -4469,7 +5084,13 @@
       "splintmail",
       "ring_of_health"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "legion_commander",
+      "sven",
+      "chaos_knight",
+      "dragon_knight",
+      "skeleton_king"
+    ]
   },
   {
     "id": "desolator",
@@ -4490,7 +5111,13 @@
       "mithril_hammer",
       "blight_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "templar_assassin",
+      "weaver",
+      "clinkz",
+      "sniper"
+    ]
   },
   {
     "id": "crimson_guard",
@@ -4514,7 +5141,13 @@
       "vanguard",
       "helm_of_iron_will"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "abyssal_underlord",
+      "tidehunter",
+      "centaur",
+      "axe",
+      "bristleback"
+    ]
   },
   {
     "id": "lotus_orb",
@@ -4541,7 +5174,13 @@
       "platemail",
       "energy_booster"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "crystal_maiden",
+      "lion",
+      "witch_doctor",
+      "dazzle",
+      "oracle"
+    ]
   },
   {
     "id": "eternal_shroud",
@@ -4592,7 +5231,13 @@
       "broadsword",
       "quelling_blade"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "black_king_bar",
@@ -4614,7 +5259,13 @@
       "mithril_hammer",
       "ogre_axe"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "skeleton_king",
+      "chaos_knight",
+      "life_stealer",
+      "alchemist"
+    ]
   },
   {
     "id": "sange_and_yasha",
@@ -4735,7 +5386,13 @@
       "relic",
       "splintmail"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "riki",
+      "slark",
+      "clinkz",
+      "weaver"
+    ]
   },
   {
     "id": "hurricane_pike",
@@ -4763,7 +5420,13 @@
       "force_staff",
       "dragon_lance"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "drow_ranger",
+      "sniper",
+      "windrunner",
+      "lina",
+      "nevermore"
+    ]
   },
   {
     "id": "shivas_guard",
@@ -4787,7 +5450,13 @@
       "splintmail",
       "chasm_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "tidehunter",
+      "centaur",
+      "abyssal_underlord",
+      "shredder",
+      "bristleback"
+    ]
   },
   {
     "id": "manta",
@@ -4815,7 +5484,13 @@
       "yasha",
       "diadem"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "spectre",
+      "terrorblade"
+    ]
   },
   {
     "id": "gungir",
@@ -4869,7 +5544,13 @@
       "veil_of_discord",
       "soul_booster"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "leshrac",
+      "death_prophet",
+      "storm_spirit",
+      "shredder",
+      "bristleback"
+    ]
   },
   {
     "id": "radiance",
@@ -4891,7 +5572,13 @@
       "relic",
       "talisman_of_evasion"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "spectre",
+      "alchemist",
+      "life_stealer",
+      "skeleton_king",
+      "doom_bringer"
+    ]
   },
   {
     "id": "sphere",
@@ -4916,7 +5603,13 @@
       "ultimate_orb",
       ""
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "medusa",
+      "morphling",
+      "storm_spirit",
+      "queenofpain",
+      "weaver"
+    ]
   },
   {
     "id": "crellas_crozier",
@@ -4965,7 +5658,13 @@
       "blitz_knuckles",
       "javelin"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "faceless_void",
+      "sniper",
+      "windrunner",
+      "juggernaut"
+    ]
   },
   {
     "id": "satanic",
@@ -4990,7 +5689,13 @@
       "claymore",
       "lifesteal"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "skeleton_king"
+    ]
   },
   {
     "id": "heart",
@@ -5012,7 +5717,13 @@
       "reaver",
       "ring_of_tarrasque"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "centaur",
+      "axe",
+      "pudge",
+      "tidehunter",
+      "bristleback"
+    ]
   },
   {
     "id": "greater_crit",
@@ -5032,7 +5743,13 @@
       "lesser_crit",
       "demon_edge"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "sven",
+      "juggernaut",
+      "faceless_void",
+      "ember_spirit"
+    ]
   },
   {
     "id": "assault",
@@ -5055,7 +5772,13 @@
       "hyperstone",
       "platemail"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "dragon_knight",
+      "sven",
+      "skeleton_king",
+      "chaos_knight",
+      "tidehunter"
+    ]
   },
   {
     "id": "ethereal_blade",
@@ -5075,7 +5798,13 @@
       "ultimate_orb",
       "ghost"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "morphling",
+      "tinker",
+      "pugna",
+      "zuus",
+      "lina"
+    ]
   },
   {
     "id": "butterfly",
@@ -5102,7 +5831,13 @@
       "claymore",
       "talisman_of_evasion"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "terrorblade",
+      "antimage"
+    ]
   },
   {
     "id": "mjollnir",
@@ -5124,7 +5859,13 @@
       "maelstrom",
       "hyperstone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "faceless_void",
+      "juggernaut",
+      "alchemist",
+      "sven",
+      "skeleton_king"
+    ]
   },
   {
     "id": "rapier",
@@ -5144,7 +5885,13 @@
       "relic",
       "demon_edge"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "medusa",
+      "ember_spirit",
+      "phantom_assassin",
+      "gyrocopter",
+      "luna"
+    ]
   },
   {
     "id": "helm_of_the_overlord",
@@ -5190,7 +5937,13 @@
       "invis_sword",
       "demon_edge"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "slark",
+      "sniper",
+      "drow_ranger",
+      "nevermore",
+      "legion_commander"
+    ]
   },
   {
     "id": "skadi",
@@ -5213,7 +5966,13 @@
       "ultimate_orb",
       "orb_of_frost"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "medusa",
+      "spectre",
+      "terrorblade",
+      "slark",
+      "morphling"
+    ]
   },
   {
     "id": "disperser",
@@ -5235,7 +5994,13 @@
       "diffusal_blade",
       "eagle"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_lancer",
+      "riki",
+      "slark",
+      "spectre",
+      "naga_siren"
+    ]
   },
   {
     "id": "abyssal_blade",
@@ -5261,7 +6026,13 @@
       "basher",
       "sange"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "antimage",
+      "phantom_assassin",
+      "juggernaut",
+      "faceless_void",
+      "sven"
+    ]
   },
   {
     "id": "bloodthorn",
@@ -5289,7 +6060,13 @@
       "oblivion_staff",
       "javelin"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "storm_spirit",
+      "queenofpain",
+      "invoker",
+      "puck",
+      "silencer"
+    ]
   },
   {
     "id": "magic_wand",
@@ -5310,7 +6087,13 @@
       "branches",
       "branches"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "wraith_band",
@@ -5338,7 +6121,13 @@
       "circlet",
       "slippers"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "phantom_assassin",
+      "drow_ranger",
+      "sniper",
+      "antimage",
+      "juggernaut"
+    ]
   },
   {
     "id": "null_talisman",
@@ -5366,7 +6155,13 @@
       "circlet",
       "mantle"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "storm_spirit",
+      "puck",
+      "invoker"
+    ]
   },
   {
     "id": "bracer",
@@ -5394,7 +6189,13 @@
       "circlet",
       "gauntlets"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "sven",
+      "chaos_knight",
+      "skeleton_king",
+      "centaur"
+    ]
   },
   {
     "id": "bottle",
@@ -5408,7 +6209,13 @@
     "passive": "Store Rune：Runes can be stored in the Bottle for later use by right-clicking them. Unused runes will automatically activate after 90 seconds. Using a stored rune fully refills the Bottle.",
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "storm_spirit",
+      "nevermore",
+      "invoker",
+      "puck",
+      "queenofpain"
+    ]
   },
   {
     "id": "soul_ring",
@@ -5431,7 +6238,13 @@
       "gauntlets",
       "gauntlets"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "dragon_knight",
+      "tidehunter",
+      "abyssal_underlord",
+      "bristleback",
+      "shredder"
+    ]
   },
   {
     "id": "cornucopia",
@@ -5452,7 +6265,13 @@
     "passive": null,
     "recipe": false,
     "components": [],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "crystal_maiden",
+      "lion",
+      "antimage",
+      "phantom_assassin"
+    ]
   },
   {
     "id": "power_treads",
@@ -5479,7 +6298,13 @@
       "gloves",
       "belt_of_strength"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "sven",
+      "juggernaut",
+      "phantom_assassin",
+      "antimage",
+      "faceless_void"
+    ]
   },
   {
     "id": "pers",
@@ -5501,7 +6326,13 @@
       "ring_of_health",
       "void_stone"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "centaur",
+      "tidehunter",
+      "abyssal_underlord"
+    ]
   },
   {
     "id": "phase_boots",
@@ -5528,7 +6359,13 @@
       "chainmail",
       "blades_of_attack"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "axe",
+      "bristleback",
+      "legion_commander",
+      "sven",
+      "chaos_knight"
+    ]
   },
   {
     "id": "oblivion_staff",
@@ -5572,7 +6409,13 @@
     "components": [
       "gloves"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "invoker",
+      "arc_warden",
+      "faceless_void",
+      "alchemist",
+      "doom_bringer"
+    ]
   },
   {
     "id": "travel_boots",
@@ -5593,7 +6436,13 @@
     "components": [
       "boots"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "tinker",
+      "ember_spirit",
+      "storm_spirit",
+      "furion",
+      "arc_warden"
+    ]
   },
   {
     "id": "phylactery",
@@ -5617,7 +6466,13 @@
       "pers",
       "diadem"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "zuus",
+      "lina",
+      "skywrath_mage",
+      "lion",
+      "ogre_magi"
+    ]
   },
   {
     "id": "witch_blade",
@@ -5646,7 +6501,13 @@
       "chainmail",
       "orb_of_venom"
     ],
-    "recommended_heroes": []
+    "recommended_heroes": [
+      "puck",
+      "queenofpain",
+      "storm_spirit",
+      "invoker",
+      "silencer"
+    ]
   },
   {
     "id": "travel_boots_2",

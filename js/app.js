@@ -127,6 +127,52 @@ function highlightCurrentNav() {
   });
 }
 
+// ===== 访问统计追踪 =====
+const Tracker = {
+  KEYS: {
+    PAGE_VIEWS: 'd2g_page_views',
+    VISITORS: 'd2g_visitors',
+  },
+
+  getVisitorId() {
+    let id = localStorage.getItem('d2g_visitor_id');
+    if (!id) {
+      id = 'visitor_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+      localStorage.setItem('d2g_visitor_id', id);
+    }
+    return id;
+  },
+
+  trackPageView() {
+    const pageViews = this.getData(this.KEYS.PAGE_VIEWS);
+    pageViews.push({
+      page: window.location.pathname.split('/').pop() || 'index.html',
+      visitorId: this.getVisitorId(),
+      timestamp: new Date().toISOString(),
+      referrer: document.referrer || 'direct',
+    });
+    // 只保留最近 10000 条
+    if (pageViews.length > 10000) pageViews.splice(0, pageViews.length - 10000);
+    this.setData(this.KEYS.PAGE_VIEWS, pageViews);
+  },
+
+  getData(key) {
+    try {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : [];
+    } catch (e) {
+      return [];
+    }
+  },
+
+  setData(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+  },
+};
+
+// 自动追踪页面浏览
+Tracker.trackPageView();
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSearch();
