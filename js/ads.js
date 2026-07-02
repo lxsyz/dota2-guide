@@ -72,11 +72,80 @@ function createAdPlaceholder(slotConfig) {
              data-full-width-responsive="${slotConfig.responsive}"></ins>
       </div>
       <div class="ad-fallback" style="display:none">
-        <div class="ad-fallback-content">
-          <p>DOTA 2 攻略站 - 支持我们</p>
-          <small>广告收入用于维持网站运营</small>
-        </div>
+        ${getFallbackContent(id, format)}
       </div>
+    </div>
+  `;
+}
+
+// 站内推广内容（AdSense 未配置时显示）
+function getFallbackContent(slotId) {
+  const contents = {
+    'ad-header': `
+      <a class="ad-fallback-link" href="guides.html">
+        <div class="ad-fallback-content ad-fallback-promo">
+          <span class="promo-icon">📚</span>
+          <div class="promo-text">
+            <p>新手必看：54 篇 DOTA 2 攻略全集</p>
+            <small>从补刀到团战，从对线到版本解读，一站式学习</small>
+          </div>
+          <span class="promo-cta">立即查看 →</span>
+        </div>
+      </a>
+    `,
+    'ad-footer': `
+      <a class="ad-fallback-link" href="meta.html">
+        <div class="ad-fallback-content ad-fallback-promo">
+          <span class="promo-icon">🏆</span>
+          <div class="promo-text">
+            <p>7.38a 版本 Tier List 已更新</p>
+            <small>查看当前版本强势英雄，上分快人一步</small>
+          </div>
+          <span class="promo-cta">查看版本 →</span>
+        </div>
+      </a>
+    `,
+    'ad-sidebar': `
+      <a class="ad-fallback-link" href="tools.html">
+        <div class="ad-fallback-content ad-fallback-promo ad-fallback-vertical">
+          <span class="promo-icon">🛠️</span>
+          <div class="promo-text">
+            <p>DPS / EHP 计算器</p>
+            <small>精准计算英雄输出与生存能力</small>
+          </div>
+          <span class="promo-cta">开始计算 →</span>
+        </div>
+      </a>
+    `,
+    'ad-incontent': `
+      <a class="ad-fallback-link" href="heroes.html">
+        <div class="ad-fallback-content ad-fallback-promo">
+          <span class="promo-icon">⚔️</span>
+          <div class="promo-text">
+            <p>127 位英雄完整出装加点</p>
+            <small>含天赋树、克制关系、实战技巧</small>
+          </div>
+          <span class="promo-cta">浏览英雄 →</span>
+        </div>
+      </a>
+    `,
+    'ad-list': `
+      <a class="ad-fallback-link" href="guides.html">
+        <div class="ad-fallback-content ad-fallback-promo">
+          <span class="promo-icon">📖</span>
+          <div class="promo-text">
+            <p>进阶攻略：堆野、拉野、控盾时机</p>
+            <small>高手都在用的细节技巧</small>
+          </div>
+          <span class="promo-cta">学习进阶 →</span>
+        </div>
+      </a>
+    `,
+  };
+  return contents[slotId] || `
+    <div class="ad-fallback-content">
+      <p>DOTA 2 攻略站</p>
+      <small>广告位待接入</small>
     </div>
   `;
 }
@@ -95,12 +164,18 @@ function getCurrentPageType() {
   return 'index';
 }
 
+// 检查 AdSense 是否已配置
+function isAdSenseConfigured() {
+  return ADS_CONFIG.adClient && !ADS_CONFIG.adClient.includes('XXXXXX');
+}
+
 // 初始化广告
 function initAds() {
   if (!ADS_CONFIG.enabled) return;
 
   const pageType = getCurrentPageType();
   let adCount = 0;
+  const configured = isAdSenseConfigured();
 
   Object.values(ADS_CONFIG.slots).forEach(slotConfig => {
     if (adCount >= ADS_CONFIG.maxAdsPerPage) return;
@@ -115,6 +190,12 @@ function initAds() {
     targetEl.innerHTML = createAdPlaceholder(slotConfig);
     adCount++;
 
+    // AdSense 未配置，直接显示站内推广 fallback
+    if (!configured) {
+      showAdFallback(targetId);
+      return;
+    }
+
     // 尝试加载 AdSense
     if (typeof adsbygoogle !== 'undefined') {
       try {
@@ -124,7 +205,7 @@ function initAds() {
         showAdFallback(targetId);
       }
     } else {
-      // AdSense 未加载，显示 fallback
+      // AdSense 脚本未加载，显示 fallback
       showAdFallback(targetId);
     }
   });

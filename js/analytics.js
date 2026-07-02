@@ -23,6 +23,15 @@ const Analytics = {
     this.bindMenu();
     this.renderAllPanels();
     this.startRealtimeUpdate();
+    this.initAccountInfo();
+  },
+
+  // 初始化账户信息
+  initAccountInfo() {
+    const userEl = document.getElementById('current-user');
+    if (userEl && window.AdminAuth) {
+      userEl.textContent = AdminAuth.getCurrentUser() || '未知';
+    }
   },
 
   // 读取数据
@@ -500,5 +509,26 @@ function saveSettings() { Analytics.saveSettings(); }
 function exportData(format) { Analytics.exportData(format); }
 function generateSampleData() { Analytics.generateSampleData(); }
 function resetData() { Analytics.resetData(); }
+
+async function changePassword() {
+  const oldPwd = document.getElementById('old-password').value;
+  const newPwd = document.getElementById('new-password').value;
+  const confirmPwd = document.getElementById('confirm-password').value;
+  if (!oldPwd || !newPwd || !confirmPwd) {
+    alert('请填写所有字段');
+    return;
+  }
+  if (newPwd !== confirmPwd) {
+    alert('两次输入的新密码不一致');
+    return;
+  }
+  const result = await AdminAuth.changePassword(oldPwd, newPwd);
+  alert(result.message);
+  if (result.success) {
+    document.getElementById('old-password').value = '';
+    document.getElementById('new-password').value = '';
+    document.getElementById('confirm-password').value = '';
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => Analytics.init());

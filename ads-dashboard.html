@@ -124,6 +124,13 @@
   </style>
 </head>
 <body>
+  <script src="js/admin-auth.js"></script>
+  <script>
+    // 登录守卫：未登录跳转登录页
+    if (!AdminAuth.isLoggedIn()) {
+      window.location.href = 'admin-login.html';
+    }
+  </script>
   <header class="site-header">
     <nav class="nav-container">
       <a href="index.html" class="site-logo">💰 <span>广告</span> 数据看板</a>

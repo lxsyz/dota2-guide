@@ -68,12 +68,68 @@
 
 /* 广告 Fallback */
 .ad-fallback {
-  padding: 16px;
-  background: linear-gradient(135deg, rgba(212,168,67,0.1), rgba(212,168,67,0.05));
+  padding: 0;
+  background: linear-gradient(135deg, rgba(212,168,67,0.12), rgba(212,168,67,0.04));
 }
 
-.ad-fallback-content {
+.ad-fallback-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ad-fallback-promo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.ad-fallback-promo:hover {
+  background: linear-gradient(135deg, rgba(212,168,67,0.2), rgba(212,168,67,0.08));
+}
+
+.ad-fallback-vertical {
+  flex-direction: column;
   text-align: center;
+  padding: 20px 16px;
+}
+
+.ad-fallback-promo .promo-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.ad-fallback-promo .promo-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-fallback-promo .promo-text p {
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.ad-fallback-promo .promo-text small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  display: block;
+}
+
+.ad-fallback-promo .promo-cta {
+  color: var(--accent-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ad-fallback-vertical .promo-cta {
+  margin-top: 8px;
 }
 
 .ad-fallback-content p {
